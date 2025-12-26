@@ -52,3 +52,33 @@ document.querySelector(".tancar").onclick = () =>
 
 document.getElementById("toggleNocturn").onclick = () =>
   document.body.classList.toggle("nocturn");
+async function carregaDades() {
+  const r = await fetch("data/efemerides_2026.json", { cache: "no-store" });
+  if (!r.ok) throw new Error("No puc carregar efemèrides");
+  return r.json();
+}
+
+async function inicia() {
+  try {
+    const data = await carregaDades();
+    efemerides = data.dies;
+    dibuixaGraella();
+  } catch (e) {
+    console.warn(e);
+  }
+
+  // Si hi ha internet, prova de refrescar al cap de 15s (per agafar updates del SW)
+  if (navigator.onLine) {
+    setTimeout(async () => {
+      try {
+        const data2 = await carregaDades();
+        efemerides = data2.dies;
+        dibuixaGraella();
+        console.log("🔄 Dades actualitzades");
+      } catch {}
+    }, 15000);
+  }
+}
+
+inicia();
+

@@ -196,3 +196,13 @@ body.nocturn .dies-setmana div{
 .swipe-in-left{ transform: translateX(14%); opacity: 0; }
 .swipe-in-right{ transform: translateX(-14%); opacity: 0; }
 .swipe-reset{ transform: translateX(0); opacity: 1; }
+/* Avui en groc */
+.dia.avui {
+  outline: 3px solid #FFD400;
+  outline-offset: -3px;
+}
+.dia.avui .num {
+  color: #FFD400 !important;
+  font-weight: 900;
+}
+

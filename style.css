@@ -62,10 +62,20 @@ header {
   display: none;
 }
 
-body.nocturn {
-  background: #000;
-  color: #ff4444;
+body.nocturn{
+  background:#000;
+  color:#ff4444;
 }
+
+body.nocturn .dia{
+  background:#120000;
+  color:#ff4444;
+}
+
+body.nocturn .badge{
+  background: rgba(255,68,68,0.18);
+}
+
 /* TOP BAR */
 .topbar{
   display:grid;

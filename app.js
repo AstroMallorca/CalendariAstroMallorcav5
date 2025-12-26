@@ -13,7 +13,7 @@ const SHEET_FESTIUS = `${BASE_SHEETS}?gid=1058273430&single=true&output=csv`;
 
 // ICS públic
 const CALENDAR_ICS =
-  "https://calendar.google.com/calendar/ical/astromca%40gmail.com/public/basic.ics";
+  "https://r.jina.ai/https://calendar.google.com/calendar/ical/astromca%40gmail.com/public/basic.ics";
 
 // Mesos en català
 const MESOS_CA = [
@@ -199,7 +199,13 @@ async function loadCSV(url) {
 async function loadICS(url) {
   const r = await fetch(url, { cache: "no-store" });
   if (!r.ok) throw new Error(`No puc carregar ICS (${r.status})`);
-  return r.text();
+  let t = await r.text();
+
+  // Amb r.jina.ai a vegades ve text extra; retallam al calendari real
+  const idx = t.indexOf("BEGIN:VCALENDAR");
+  if (idx !== -1) t = t.slice(idx);
+
+  return t;
 }
 
 // === Transformacions ===
@@ -262,7 +268,9 @@ function setFotoMes(isoYM) {
   const src = (f && f.imatge) ? f.imatge : fallbackPath;
 
   img.src = src;
-  titol.textContent = (f && f.titol) ? f.titol : "";
+  const nom = (f && f.titol) ? f.titol : "";
+const autor = (f && f.autor) ? f.autor : "";
+titol.textContent = autor ? `${nom} — ${autor}` : nom;
 
   img.onclick = (f ? () => obreModalDetallFoto(f) : null);
 

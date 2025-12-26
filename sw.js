@@ -135,3 +135,8 @@ async function staleWhileRevalidate(req) {
     headers: { "Content-Type": "text/plain; charset=utf-8" }
   });
 }
+self.addEventListener("message", (event) => {
+  if (event.data === "SKIP_WAITING") {
+    self.skipWaiting();
+  }
+});

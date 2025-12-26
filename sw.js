@@ -1,8 +1,7 @@
 // sw.js
 // Offline + actualització automàtica (Sheets CSV + Calendar ICS)
 // IMPORTANT: cada vegada que facis canvis importants, puja la versió (v7 -> v8, etc.)
-// ⚠️ Pujam la versió per forçar actualització del cache a iOS
-const CACHE_NAME = "calendariastromallorca-v20251227";
+const CACHE_NAME = "calendariastromallorca";
 
 // Fitxers mínims per arrencar OFFLINE (mateix origen)
 const CORE_ASSETS = [
@@ -54,8 +53,7 @@ self.addEventListener("fetch", (event) => {
   const allowedOrigins = new Set([
     self.location.origin,
     "https://docs.google.com",
-    "https://calendar.google.com",
-    "https://r.jina.ai"
+    "https://calendar.google.com"
   ]);
 
   if (!allowedOrigins.has(url.origin)) return;

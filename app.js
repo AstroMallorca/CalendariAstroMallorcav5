@@ -1,15 +1,19 @@
 // app.js
 
 // === URLs (les teves) ===
-const SHEET_FOTOS_MES = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSWf6OL8LYzMsBPuxvI_h4s9-0__hru3hWK9D2ewyccoku9ndl2VhZ0GS8P9uEigShJEehsy2UktnY2/pub?gid=0&single=true&output=csv";
-const SHEET_EFEMERIDES = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSWf6OL8LYzMsBPuxvI_h4s9-0__hru3hWK9D2ewyccoku9ndl2VhZ0GS8P9uEigShJEehsy2UktnY2/pub?gid=1305356303&single=true&output=csv";
-const SHEET_CONFIG = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSWf6OL8LYzMsBPuxvI_h4s9-0__hru3hWK9D2ewyccoku9ndl2VhZ0GS8P9uEigShJEehsy2UktnY2/pub?gid=1058273430&single=true&output=csv";
+const BASE_SHEETS =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vSWf6OL8LYzMsBPuxvI_h4s9-0__hru3hWK9D2ewyccoku9ndl2VhZ0GS8P9uEigShJEehsy2UktnY2/pub";
 
-// Festius Balears (qualsevol any) — només columna "nom" amb DD-MM-YYYY
-const SHEET_FESTIUS = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSWf6OL8LYzMsBPuxvI_h4s9-0__hru3hWK9D2ewyccoku9ndl2VhZ0GS8P9uEigShJEehsy2UktnY2/pub?output=csv";
+const SHEET_FOTOS_MES = `${BASE_SHEETS}?gid=0&single=true&output=csv`;
+const SHEET_EFEMERIDES = `${BASE_SHEETS}?gid=1305356303&single=true&output=csv`;
+const SHEET_CONFIG = `${BASE_SHEETS}?gid=1324899531&single=true&output=csv`;
+
+// ✅ FESTIUS (A=data DD-MM-YYYY, B=nom)
+const SHEET_FESTIUS = `${BASE_SHEETS}?gid=1058273430&single=true&output=csv`;
 
 // ICS públic
-const CALENDAR_ICS = "https://calendar.google.com/calendar/ical/astromca%40gmail.com/public/basic.ics";
+const CALENDAR_ICS =
+  "https://r.jina.ai/https://calendar.google.com/calendar/ical/astromca%40gmail.com/public/basic.ics";
 
 // Mesos en català
 const MESOS_CA = [
@@ -18,20 +22,7 @@ const MESOS_CA = [
 ];
 
 // === CONTROL DE MES (SWIPE) ===
-// En obrir:
-// - si avui és any 2026 -> mostra el mes actual
-// - si no -> Gener 2026
-const AVUI = new Date();
-const AVUI_ISO = (() => {
-  const y = AVUI.getFullYear();
-  const m = String(AVUI.getMonth() + 1).padStart(2, "0");
-  const d = String(AVUI.getDate()).padStart(2, "0");
-  return `${y}-${m}-${d}`;
-})();
-
-let mesActual = (AVUI.getFullYear() === 2026)
-  ? `2026-${String(AVUI.getMonth() + 1).padStart(2, "0")}`
-  : "2026-01";
+let mesActual = "2026-08"; // mes inicial
 
 function monthToParts(isoYM){
   const [y, m] = isoYM.split("-").map(Number);
@@ -71,7 +62,7 @@ let efemerides = {};           // local data/efemerides_2026.json (per dia ISO)
 let efemeridesEspecials = {};  // del sheet per dia ISO -> array
 let activitats = {};           // del calendari ICS per dia ISO -> array
 let fotosMes = {};             // "MM-YYYY" -> info foto
-let festius = new Map(); // "YYYY-MM-DD" → "Nom del festiu"
+let festius = new Map();       // "YYYY-MM-DD" -> "Nom del festiu"
 
 // === Utils dates ===
 function ddmmyyyyToISO(s) {
@@ -89,6 +80,20 @@ function ddmmyyyyToISO(s) {
   const yyyy = m[3];
 
   return `${yyyy}-${mm}-${dd}`;
+}
+
+// ✅ FALTAVA: isoToMonthKey
+function isoToMonthKey(isoYM) {
+  // isoYM "2026-08" -> "08-2026"
+  return `${isoYM.slice(5,7)}-${isoYM.slice(0,4)}`;
+}
+
+// ✅ FALTAVA: actualitzaTitolMes
+function actualitzaTitolMes(isoYM){
+  const [y, m] = isoYM.split("-").map(Number);
+  const nom = `${MESOS_CA[m-1]} ${y}`;
+  const el = document.getElementById("titolMes");
+  if (el) el.textContent = nom.toUpperCase();
 }
 
 // === CSV parser (quotes + commas) ===
@@ -120,9 +125,11 @@ function parseCSV(text) {
   if (cur.length || row.length) { row.push(cur); rows.push(row); }
   return rows;
 }
+
+// ✅ Millora: capçaleres normalitzades (evita espais/majúscules)
 function rowsToObjects(rows) {
   if (!rows.length) return [];
-  const header = rows[0].map(h => (h || "").trim());
+  const header = rows[0].map(h => (h || "").trim().toLowerCase());
   return rows.slice(1)
     .filter(r => r.some(x => (x || "").trim() !== ""))
     .map(r => {
@@ -192,7 +199,13 @@ async function loadCSV(url) {
 async function loadICS(url) {
   const r = await fetch(url, { cache: "no-store" });
   if (!r.ok) throw new Error(`No puc carregar ICS (${r.status})`);
-  return r.text();
+  let t = await r.text();
+
+  // Amb r.jina.ai a vegades ve text extra; retallam al calendari real
+  const idx = t.indexOf("BEGIN:VCALENDAR");
+  if (idx !== -1) t = t.slice(idx);
+
+  return t;
 }
 
 // === Transformacions ===
@@ -255,7 +268,9 @@ function setFotoMes(isoYM) {
   const src = (f && f.imatge) ? f.imatge : fallbackPath;
 
   img.src = src;
-  titol.textContent = (f && f.titol) ? f.titol : "";
+  const nom = (f && f.titol) ? f.titol : "";
+const autor = (f && f.autor) ? f.autor : "";
+titol.textContent = autor ? `${nom} — ${autor}` : nom;
 
   img.onclick = (f ? () => obreModalDetallFoto(f) : null);
 
@@ -302,10 +317,7 @@ function dibuixaMes(isoYM) {
     const cel = document.createElement("div");
     cel.className = "dia";
 
-    // ✅ Marca el dia d'avui en groc (si coincideix amb el mes que s'està mostrant)
-    if (iso === AVUI_ISO) cel.classList.add("avui");
-
-    // Diumenge o festiu (qualsevol any): número verd
+    // ✅ Diumenge o festiu: verd
     const dow = new Date(Y, M - 1, d).getDay(); // 0 = diumenge
     const esDiumenge = (dow === 0);
     const esFestiu = festius.has(iso);
@@ -324,7 +336,8 @@ function dibuixaMes(isoYM) {
       <div class="num">${d}</div>
       <div class="badges">
         ${esp.slice(0,2).map(x => `<span class="badge">${x.codi}</span>`).join("")}
-        ${act.length ? `<span class="badge am">AM</span>` : ""}
+        ${act.length ? `<img class="am-mini" src="assets/icons/astromallorca.png" alt="AstroMallorca">` : ""}
+
       </div>
     `;
 
@@ -337,6 +350,7 @@ function obreDia(iso) {
   const info = efemerides[iso] || {};
   const esp = efemeridesEspecials[iso] || [];
   const act = activitats[iso] || [];
+
   const nomFestiu = festius.get(iso);
 
   const llunaTxt = info.lluna ? `${info.lluna.fase || ""} (${info.lluna.il_luminacio_percent ?? ""}%)` : "—";
@@ -350,17 +364,14 @@ function obreDia(iso) {
     ? `<h3>Activitats AstroMallorca</h3><ul>${act.map(a => `<li><b>${a.titol}</b>${a.lloc ? " — " + a.lloc : ""}${a.url ? ` — <a href="${a.url}" target="_blank">Enllaç</a>` : ""}</li>`).join("")}</ul>`
     : `<h3>Activitats AstroMallorca</h3><p>Cap activitat.</p>`;
 
-contingutDia.innerHTML = `
-  <h2>${iso}</h2>
-
-  ${nomFestiu ? `<p>🎉 <b>${nomFestiu}</b></p>` : ""}
-
-  <p><b>Lluna:</b> ${llunaTxt}</p>
-  <p>${astrofoto}</p>
-  ${espHtml}
-  ${actHtml}
-`;
-
+  contingutDia.innerHTML = `
+    <h2>${iso}</h2>
+    ${nomFestiu ? `<p>🎉 <b>${nomFestiu}</b></p>` : ""}
+    <p><b>Lluna:</b> ${llunaTxt}</p>
+    <p>${astrofoto}</p>
+    ${espHtml}
+    ${actHtml}
+  `;
   modal.classList.remove("ocult");
 }
 
@@ -375,7 +386,7 @@ let animant = false;
 async function animaCanviMes(direccio){
   if (animant) return;
 
-  const nouMes = clamp2026(direccio === "next" ? nextMonth(mesActual) : prevMonth(mesActual));
+  const nouMes = clamp2026(dinsLimits(direccio === "next" ? nextMonth(mesActual) : prevMonth(mesActual)));
   if (nouMes === mesActual) return;
 
   animant = true;
@@ -400,6 +411,11 @@ async function animaCanviMes(direccio){
 
   swipeInner.classList.remove("swipe-anim");
   animant = false;
+}
+
+// ✅ helper per evitar errors (si no el tenies)
+function dinsLimits(isoYM){
+  return clamp2026(isoYM);
 }
 
 // Detector swipe
@@ -452,16 +468,13 @@ async function inicia() {
     fotosMes = buildFotosMes(fotos);
     efemeridesEspecials = buildEfemeridesEspecials(esp);
 
-    // Festius: el Sheet només té columna "nom" amb DD-MM-YYYY
-   festius = new Map();
-
-fest.forEach(r => {
-  const iso = ddmmyyyyToISO(r.data);  // columna A
-  if (!iso) return;
-  festius.set(iso, (r.nom || "Festiu")); // columna B
-});
-
-console.log("✅ Festius carregats:", festius.size, [...festius.entries()].slice(0, 5));
+    // ✅ Festius: Map ISO -> nom
+    festius = new Map();
+    fest.forEach(r => {
+      const iso = ddmmyyyyToISO(r.data);
+      if (!iso) return;
+      festius.set(iso, r.nom || "Festiu");
+    });
 
     // calendari
     try {
@@ -474,23 +487,6 @@ console.log("✅ Festius carregats:", festius.size, [...festius.entries()].slice
 
     renderMes(mesActual);
 
-    // refresc suau per agafar canvis (si online)
-    if (navigator.onLine) {
-      setTimeout(async () => {
-        try {
-          const [esp2, fest2] = await Promise.all([
-            loadCSV(SHEET_EFEMERIDES),
-            loadCSV(SHEET_FESTIUS)
-          ]);
-          efemeridesEspecials = buildEfemeridesEspecials(esp2);
-          festius = new Set(
-            fest2.map(r => ddmmyyyyToISO(r.nom)).filter(Boolean)
-          );
-          renderMes(mesActual);
-        } catch {}
-      }, 15000);
-    }
-
   } catch (err) {
     graella.innerHTML = `<p style="padding:10px">Error carregant dades: ${err.message}</p>`;
     console.error(err);
@@ -498,3 +494,4 @@ console.log("✅ Festius carregats:", festius.size, [...festius.entries()].slice
 }
 
 inicia();
+

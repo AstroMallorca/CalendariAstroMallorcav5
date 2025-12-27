@@ -215,5 +215,32 @@ body.nocturn .dies-setmana div{
 body.nocturn .info-foto {
   color: #c62828; /* vermell fosc, còmode per visió nocturna */
 }
+.comptador-eclipsi{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin: 6px 0 14px 0;
+  text-align:center;
+}
+
+.comptador-eclipsi__icon{
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.comptador-eclipsi__text{
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  font-size: 1.05rem;
+  color: #111;
+}
+
+/* Mode nocturn: vermell (com la resta de visió nocturna) */
+body.nocturn .comptador-eclipsi__text{
+  color: #c62828;
+}
+
 
 

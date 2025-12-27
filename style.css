@@ -245,6 +245,24 @@ body.nocturn .info-foto {
 body.nocturn .comptador-eclipsi__text{
   color: #c62828;
 }
+/* EFEMÈRIDES ESPECIALS - ICONES */
+.dia {
+  position: relative;
+}
+
+.efemerides-icons {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  display: flex;
+  gap: 3px;
+}
+
+.efemeride-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
 
 
 

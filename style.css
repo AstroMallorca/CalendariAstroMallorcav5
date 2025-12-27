@@ -25,7 +25,7 @@ body{
   text-align: center;
   font-size: 34px;
   font-weight: 800;
-  margin-right: 10px;   /* ⬅️ separació fina amb el botó nocturn */
+  margin-right: 6px;   /* ⬅️ separació fina amb el botó nocturn */
 }
 .btn-icon{
   background: transparent;

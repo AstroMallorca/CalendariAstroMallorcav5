@@ -126,13 +126,16 @@ function getTimeZoneOffsetMinutes(date, timeZone) {
 
 function zonedDateTimeToUtcMs({year, month, day, hour, minute}, timeZone) {
   // Estimació inicial
-  let utc = Date.UTC(year, month - 1, day, hour, minute, 0);
+  const base = Date.UTC(year, month - 1, day, hour, minute, 0);
+
   // Ajust 1
-  let off = getTimeZoneOffsetMinutes(new Date(utc), timeZone);
-  utc -= off * 60000;
-  // Ajust 2 (per seguretat a canvis DST)
+  let off = getTimeZoneOffsetMinutes(new Date(base), timeZone);
+  let utc = base - off * 60000;
+
+  // Ajust 2 (per seguretat a canvis DST) -> recalcula DES DE base, no tornis a restar sobre utc
   off = getTimeZoneOffsetMinutes(new Date(utc), timeZone);
-  utc -= off * 60000;
+  utc = base - off * 60000;
+
   return utc;
 }
 

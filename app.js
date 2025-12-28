@@ -18,7 +18,7 @@ const SHEET_FESTIUS =
 const LOCAL_EFEMERIDES_JSON = "data/efemerides_2026.json";
 
 // Eclipse
-const ECLIPSE_LOCAL_ISO = "2026-08-12T20:31:00"; // hora local (Europe/Madrid)
+const ECLIPSE_LOCAL_ISO = "2026-08-12T20:31:00+02:00"; // hora local (Europe/Madrid)
 
 // Mesos en català
 const MESOS_CA = [
@@ -345,4 +345,7 @@ async function inicia(){
   }
 }
 
-document.addEventListener("DOMContentLoaded", inicia);
+document.addEventListener("DOMContentLoaded", () => {
+  inicia();
+  iniciaCompteEnrereEclipsi();
+});

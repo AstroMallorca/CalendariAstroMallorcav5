@@ -149,6 +149,27 @@ body{
 .badge.am{
   background: rgba(255, 200, 0, 0.35);
 }
+/* Logo AstroMallorca dins la casella (de fons, centrat i sense tapar el número ni els badges) */
+.am-bg{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  opacity: 0.28;
+  pointer-events: none;
+}
+
+/* Asseguram que el número i els badges queden per damunt */
+.dia .num{
+  position: relative;
+  z-index: 2;
+}
+.badges{
+  z-index: 3;
+}
 
 /* MODAL */
 .modal{

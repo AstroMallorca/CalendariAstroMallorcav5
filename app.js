@@ -447,9 +447,8 @@ function dibuixaMes(isoYM) {
       <div class="num">${d}</div>
       <div class="badges">
         ${esp.slice(0,2).map(x => `<span class="badge">${x.codi}</span>`).join("")}
-        
+        ${act.length ? `<img class="am-mini" src="assets/icons/astromallorca.png" alt="AstroMallorca">` : ""}
       </div>
-      ${act.length ? `<img class="am-center" src="assets/icons/astromallorca.png" alt="AstroMallorca">` : ""}
     `;
 
     cel.onclick = () => obreDia(iso);

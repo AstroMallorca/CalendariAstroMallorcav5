@@ -87,20 +87,6 @@ body{
   display: inline-block;
 }
 
-.am-center{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-  opacity: 0.25;
-  pointer-events: none;
-  z-index: 1;
-}
-
-
 /* GRAELLA (SENSE SEPARACIÓ) */
 .graella{
   display:grid;
@@ -117,7 +103,6 @@ body{
   border-radius: 0;
   border: 1px solid rgba(0,0,0,0.05);
   box-sizing: border-box;
-  position: relative;
 
   display: grid;
   grid-template-rows: auto 1fr;
@@ -132,8 +117,6 @@ body{
   font-weight: 800;
   font-size: 16px;
   line-height: 1;
-  position: relative;
-  z-index: 2;
 }
 
 /* Diumenges i festius: número verd */
@@ -149,8 +132,6 @@ body{
   align-items: center;
   max-height: 16px;
   overflow: hidden;
-  position: relative;
-  z-index: 2;
 }
 .badge{
   font-size: 10px;

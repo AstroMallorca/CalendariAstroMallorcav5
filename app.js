@@ -579,6 +579,12 @@ async function animaCanviMes(direccio){
   animant = false;
 }
 
+// Botons (desktop)
+const btnPrevMes = document.getElementById("prevMes");
+const btnNextMes = document.getElementById("nextMes");
+if (btnPrevMes) btnPrevMes.onclick = () => animaCanviMes("prev");
+if (btnNextMes) btnNextMes.onclick = () => animaCanviMes("next");
+
 // Detector swipe
 let startX = 0, startY = 0, startT = 0;
 let tracking = false;

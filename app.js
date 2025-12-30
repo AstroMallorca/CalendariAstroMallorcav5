@@ -529,50 +529,100 @@ function dibuixaMes(isoYM) {
   const daysInMonth = new Date(Y, M, 0).getDate();
   const firstDow = new Date(Y, M - 1, 1).getDay(); // 0=dg..6=ds
   const offset = (firstDow + 6) % 7; // dl=0..dg=6
-  const moonByDay = getMoonQuartersForMonth(Y, M - 1);
 
-  for (let i = 0; i < offset; i++) {
-    const empty = document.createElement("div");
-    empty.className = "dia buit";
-    graella.appendChild(empty);
-  }
+  // Moon maps: mes actual + anterior + següent (per poder pintar fases als “altres mesos”)
+  const moonByDay      = getMoonQuartersForMonth(Y, M - 1);
+  const prevDate       = new Date(Y, M - 2, 1);
+  const nextDate       = new Date(Y, M, 1);
+  const prevY          = prevDate.getFullYear();
+  const prevM1         = prevDate.getMonth() + 1; // 1..12
+  const nextY          = nextDate.getFullYear();
+  const nextM1         = nextDate.getMonth() + 1; // 1..12
+  const daysInPrev     = new Date(prevY, prevM1, 0).getDate();
+  const moonPrevByDay  = getMoonQuartersForMonth(prevY, prevM1 - 1);
+  const moonNextByDay  = getMoonQuartersForMonth(nextY, nextM1 - 1);
 
-  for (let d = 1; d <= daysInMonth; d++) {
+  function pintaCel(dateObj, esAltreMes){
+    const y  = dateObj.getFullYear();
+    const m1 = dateObj.getMonth() + 1; // 1..12
+    const d  = dateObj.getDate();
+
     const dd = String(d).padStart(2, "0");
-    const mm = String(M).padStart(2, "0");
-    const iso = `${Y}-${mm}-${dd}`;
+    const mm = String(m1).padStart(2, "0");
+    const iso = `${y}-${mm}-${dd}`;
 
     const info = efemerides[iso] || null;
     const esp = efemeridesEspecials[iso] || [];
     const act = activitats[iso] || [];
 
     const cel = document.createElement("div");
-    cel.className = "dia";
+    cel.className = "dia" + (esAltreMes ? " altre-mes" : "");
 
-    // ✅ Avui en groc
+    // ✅ Avui en groc (només si és exactament avui)
     if (iso === AVUI_ISO) cel.classList.add("avui");
 
-    // ✅ Diumenge o festiu: verd
-    const dow = new Date(Y, M - 1, d).getDay(); // 0 = diumenge
+    // ✅ Diumenge o festiu: verd (si vols que als “altres mesos” no es posin verds, ho podem ajustar)
+    const dow = dateObj.getDay(); // 0 = diumenge
     const esDiumenge = (dow === 0);
     const esFestiu = festius.has(iso);
     if (esDiumenge || esFestiu) cel.classList.add("festiu");
 
-   // 🌙 icona fase lunar (quarts) a dalt-dreta (SEMPRE definida)
-const moonQuarters = moonByDay.get(d) || [];
-const moonHtml = moonQuarters.length
-  ? `<div class="moon-phases">${moonQuarters
-      .map(q => `<img class="moon-icon" src="${MOON_ICON_BY_QUARTER[q]}" alt="Fase lluna">`)
-      .join("")}</div>`
-  : "";
+    // 🌙 fases lunars (quarts) segons el mes corresponent
+    let moonQuarters = [];
+    if (!esAltreMes && y === Y && m1 === M) {
+      moonQuarters = moonByDay.get(d) || [];
+    } else if (y === prevY && m1 === prevM1) {
+      moonQuarters = moonPrevByDay.get(d) || [];
+    } else if (y === nextY && m1 === nextM1) {
+      moonQuarters = moonNextByDay.get(d) || [];
+    }
 
-// fons lluna fosca (si existeix)
-if (info?.lluna_foscor?.color) {
-  cel.style.background = info.lluna_foscor.color;
-  cel.style.color =
-    (info.lluna_foscor.color === "#000000" || info.lluna_foscor.color === "#333333")
-      ? "#fff"
-      : "#000";
+    const moonHtml = moonQuarters.length
+      ? `<div class="moon-phases">${moonQuarters
+          .map(q => `<img class="moon-icon" src="${MOON_ICON_BY_QUARTER[q]}" alt="Fase lluna">`)
+          .join("")}</div>`
+      : "";
+
+    // fons lluna fosca (si existeix en efemèrides)
+    if (info?.lluna_foscor?.color) {
+      cel.style.background = info.lluna_foscor.color;
+      cel.style.color =
+        (info.lluna_foscor.color === "#000000" || info.lluna_foscor.color === "#333333")
+          ? "#fff"
+          : "#000";
+    }
+
+    cel.innerHTML = `
+      <div class="num">${d}</div>
+      ${moonHtml}
+      ${act.length ? `<img class="am-mini am-act-center" src="assets/icons/astromallorca.png" alt="AstroMallorca">` : ""}
+      <div class="badges">
+        ${esp.slice(0,6).map(x => `<img class="esp-icon" src="${x.codi}" alt="${(x.titol || x.clau || "").replace(/"/g,"&quot;")}" loading="lazy">`).join("")}
+      </div>
+    `;
+
+    cel.onclick = () => obreDia(iso);
+    graella.appendChild(cel);
+  }
+
+  // 1) Dies del mes anterior (en lloc de buits)
+  // offset = quants dies abans del dia 1 hem de pintar
+  for (let i = 0; i < offset; i++) {
+    const dayPrev = (daysInPrev - offset + 1) + i; // p.ex: si offset=2 i diesPrev=31 -> 30,31
+    pintaCel(new Date(prevY, prevM1 - 1, dayPrev), true);
+  }
+
+  // 2) Dies del mes actual
+  for (let d = 1; d <= daysInMonth; d++) {
+    pintaCel(new Date(Y, M - 1, d), false);
+  }
+
+  // 3) Dies del mes següent fins completar la darrera setmana
+  const totalPintats = offset + daysInMonth;
+  const tail = (7 - (totalPintats % 7)) % 7; // 0..6
+  for (let d = 1; d <= tail; d++) {
+    pintaCel(new Date(nextY, nextM1 - 1, d), true);
+  }
 }
 
 cel.innerHTML = `

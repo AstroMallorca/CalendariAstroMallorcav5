@@ -1,0 +1,1025 @@
+[
+  {
+    "date": "2026-01-01",
+    "items": [
+      {
+        "type": "person",
+        "category": "astronomia",
+        "title": "Naixement de Maria Mitchell",
+        "year": 1818,
+        "description": "Naixement de l’astrònoma que va descobrir un cometa el 1847 i va impulsar l’educació científica femenina."
+      },
+      {
+        "type": "organization",
+        "category": "espai",
+        "title": "Creació de l’Agència Espacial Europea",
+        "year": 1975,
+        "description": "Entrada en vigor de la Convenció que funda oficialment l’ESA."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Llançament de la sonda Luna 1",
+        "year": 1959,
+        "description": "Primera nau a escapar del camp gravitatori terrestre."
+      },
+      {
+        "type": "discovery",
+        "category": "biologia",
+        "title": "Difusió dels treballs de Gregor Mendel",
+        "year": 1867,
+        "description": "Circulació inicial dels seus estudis sobre l’herència biològica."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-02",
+    "items": [
+      {
+        "type": "person",
+        "category": "astronomia",
+        "title": "Naixement d’Annie Jump Cannon",
+        "year": 1863,
+        "description": "Naixement de la científica que va establir la classificació espectral estel·lar moderna."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Inserció orbital de Mars Express",
+        "year": 2004,
+        "description": "Primera missió planetària europea en òrbita marciana."
+      },
+      {
+        "type": "person",
+        "category": "divulgacio",
+        "title": "Naixement d’Isaac Asimov",
+        "year": 1920,
+        "description": "Naixement d’un dels principals divulgadors científics del segle XX."
+      },
+      {
+        "type": "organization",
+        "category": "astronomia",
+        "title": "Consolidació de la Royal Astronomical Society",
+        "year": 1820,
+        "description": "Impuls de les primeres publicacions periòdiques d’astronomia moderna."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-03",
+    "items": [
+      {
+        "type": "person",
+        "category": "matematiques",
+        "title": "Naixement de Margaret H. Wright",
+        "year": 1945,
+        "description": "Referent internacional en matemàtica computacional i optimització numèrica."
+      },
+      {
+        "type": "person",
+        "category": "fisica",
+        "title": "Naixement de Stephen Hawking",
+        "year": 1942,
+        "description": "Naixement del físic que va revolucionar la cosmologia moderna."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Aterrament del rover Spirit a Mart",
+        "year": 2004,
+        "description": "Inici d’una missió clau per a l’estudi geològic del planeta Mart."
+      },
+      {
+        "type": "astronomy_event",
+        "category": "meteors",
+        "title": "Màxim de la pluja de meteors Quadràntids",
+        "year": null,
+        "description": "Un dels màxims de meteors més intensos observables anualment."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-04",
+    "items": [
+      {
+        "type": "person",
+        "category": "espai",
+        "title": "Naixement de Judith Resnik",
+        "year": 1949,
+        "description": "Naixement de l’astronauta i enginyera elèctrica nord-americana."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Primera transmissió d’imatges de la cara oculta de la Lluna (Luna 3)",
+        "year": 1959,
+        "description": "Primera transmissió d’imatges de la cara oculta de la Lluna."
+      },
+      {
+        "type": "person",
+        "category": "fisica",
+        "title": "Naixement d’Isaac Newton",
+        "year": 1643,
+        "description": "Naixement del científic que va formular les lleis del moviment i la gravitació."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Llançament de la missió solar STEREO",
+        "year": 2007,
+        "description": "Llançament de dues sondes per estudiar el Sol en tres dimensions."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-05",
+    "items": [
+      {
+        "type": "person",
+        "category": "matematiques",
+        "title": "Naixement de Katherine Johnson",
+        "year": 1918,
+        "description": "Naixement de la matemàtica clau en el càlcul de trajectòries espacials."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Anàlisi directa de l’atmosfera de Venus (Venera 4)",
+        "year": 1967,
+        "description": "Primera anàlisi directa de l’atmosfera de Venus."
+      },
+      {
+        "type": "person",
+        "category": "enginyeria",
+        "title": "Naixement d’Umberto Nobile",
+        "year": 1885,
+        "description": "Naixement del pioner de l’exploració científica de l’Àrtic amb dirigibles."
+      },
+      {
+        "type": "discovery",
+        "category": "geologia",
+        "title": "Presentació de la teoria de la deriva continental (Alfred Wegener)",
+        "year": 1912,
+        "description": "Presentació de la teoria de la deriva continental."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-06",
+    "items": [
+      {
+        "type": "person",
+        "category": "astronomia",
+        "title": "Naixement de Vera Rubin",
+        "year": 1928,
+        "description": "Naixement de la científica que va aportar proves clau de la matèria fosca."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Primera nau a impactar contra la Lluna (Luna 2)",
+        "year": 1959,
+        "description": "Primera nau a impactar contra la superfície lunar."
+      },
+      {
+        "type": "person",
+        "category": "arqueologia",
+        "title": "Naixement de Heinrich Schliemann",
+        "year": 1822,
+        "description": "Naixement del pioner de l’arqueologia científica de camp."
+      },
+      {
+        "type": "publication",
+        "category": "astronomia",
+        "title": "Publicació d’Astronomia Nova (Johannes Kepler)",
+        "year": 1610,
+        "description": "Publicació d’Astronomia Nova, fonamental per a la mecànica celeste."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-07",
+    "items": [
+      {
+        "type": "person",
+        "category": "astronomia",
+        "title": "Naixement de Galileo Galilei",
+        "year": 1564,
+        "description": "Naixement del pare de la ciència moderna experimental."
+      },
+      {
+        "type": "person",
+        "category": "astronomia",
+        "title": "Naixement de Cecilia Payne-Gaposchkin",
+        "year": 1900,
+        "description": "Naixement de la científica que va determinar la composició de les estrelles."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Retorn robòtic de mostres lunars (Luna 16)",
+        "year": 1970,
+        "description": "Primera missió robòtica a retornar mostres de sòl lunar a la Terra."
+      },
+      {
+        "type": "organization",
+        "category": "ciencia",
+        "title": "Fundació de l’Académie des Sciences",
+        "year": 1666,
+        "description": "Fundació d’una de les primeres acadèmies científiques modernes."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-08",
+    "items": [
+      {
+        "type": "person",
+        "category": "medicina",
+        "title": "Primera dona amb títol oficial de medicina als EUA (Elizabeth Blackwell)",
+        "year": 1849,
+        "description": "Obtenció del primer títol oficial de medicina concedit a una dona als Estats Units."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Aterratge del rover Lunokhod 2 (Luna 21)",
+        "year": 1973,
+        "description": "Aterratge del rover Lunokhod 2, rècord de distància recorreguda fora de la Terra."
+      },
+      {
+        "type": "astronomy_event",
+        "category": "astronomia",
+        "title": "Observació telescòpica dels satèl·lits de Júpiter (Galileo)",
+        "year": 1610,
+        "description": "Observació telescòpica dels principals satèl·lits de Júpiter."
+      },
+      {
+        "type": "discovery",
+        "category": "quimica",
+        "title": "Identificació de les propietats insecticides del DDT (P. H. Müller)",
+        "year": 1939,
+        "description": "Identificació de les propietats insecticides del DDT."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-09",
+    "items": [
+      {
+        "type": "person",
+        "category": "pensament",
+        "title": "Naixement de Simone de Beauvoir",
+        "year": 1908,
+        "description": "Naixement d’una figura clau en la reflexió contemporània sobre coneixement i societat."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Aterratge del rover Lunokhod 1 (Luna 17)",
+        "year": 1970,
+        "description": "Aterratge del primer rover lunar, Lunokhod 1."
+      },
+      {
+        "type": "person",
+        "category": "fisica",
+        "title": "Naixement de Richard Feynman",
+        "year": 1918,
+        "description": "Naixement d’un dels impulsors de l’electrodinàmica quàntica."
+      },
+      {
+        "type": "organization",
+        "category": "divulgacio",
+        "title": "Fundació de la National Geographic Society",
+        "year": 1888,
+        "description": "Fundació d’una entitat clau en divulgació científica."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-10",
+    "items": [
+      {
+        "type": "person",
+        "category": "espai",
+        "title": "Naixement de Valentina Tereshkova",
+        "year": 1937,
+        "description": "Naixement de la primera dona que va viatjar a l’espai."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Llançament de Surveyor 7",
+        "year": 1968,
+        "description": "Llançament de l’última missió Surveyor abans dels vols Apollo."
+      },
+      {
+        "type": "invention",
+        "category": "tecnologia",
+        "title": "Patent del sistema de salt de freqüència (Hedy Lamarr)",
+        "year": 1941,
+        "description": "Registre de la patent del sistema de comunicacions per salt de freqüència."
+      },
+      {
+        "type": "person",
+        "category": "medicina",
+        "title": "Naixement d’Emil Kraepelin",
+        "year": 1856,
+        "description": "Naixement del fundador de la classificació psiquiàtrica moderna."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-11",
+    "items": [
+      {
+        "type": "person",
+        "category": "fisica",
+        "title": "Naixement de Lise Meitner",
+        "year": 1878,
+        "description": "Naixement de la científica associada a la interpretació teòrica de la fissió nuclear."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Llançament d’Explorer 1",
+        "year": 1958,
+        "description": "Llançament del primer satèl·lit dels Estats Units."
+      },
+      {
+        "type": "person",
+        "category": "psicologia",
+        "title": "Naixement de William James",
+        "year": 1842,
+        "description": "Naixement d’un dels fundadors de la psicologia científica."
+      },
+      {
+        "type": "organization",
+        "category": "ciencia",
+        "title": "Desenvolupament inicial de la Smithsonian Institution",
+        "year": 1846,
+        "description": "Inici del desenvolupament com a centre científic nacional."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-12",
+    "items": [
+      {
+        "type": "person",
+        "category": "espai",
+        "title": "Naixement de Serguei Koroliov",
+        "year": 1907,
+        "description": "Naixement de l’arquitecte del programa espacial soviètic."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Acoblament Atlantis–Mir (STS-81)",
+        "year": 1997,
+        "description": "Acoblament del transbordador Atlantis amb l’estació espacial Mir."
+      },
+      {
+        "type": "publication",
+        "category": "medi_ambient",
+        "title": "Impacte científic de Silent Spring (Rachel Carson)",
+        "year": 1962,
+        "description": "Impacte científic de Silent Spring en la regulació ambiental."
+      },
+      {
+        "type": "organization",
+        "category": "clima",
+        "title": "Constitució de l’Organització Meteorològica Mundial",
+        "year": 1950,
+        "description": "Entrada en vigor de la convenció fundacional de l’OMM."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-13",
+    "items": [
+      {
+        "type": "person",
+        "category": "biologia",
+        "title": "Naixement d’Alfred Russel Wallace",
+        "year": 1823,
+        "description": "Naixement del coautor de la teoria de la selecció natural."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Primer acoblament tripulat (Soyuz 4)",
+        "year": 1969,
+        "description": "Primera maniobra d’acoblament tripulat de la història."
+      },
+      {
+        "type": "person",
+        "category": "ciencia",
+        "title": "Primer doctorat universitari a una dona (Elena Cornaro Piscopia)",
+        "year": 1678,
+        "description": "Obtenció del primer doctorat universitari concedit a una dona."
+      },
+      {
+        "type": "organization",
+        "category": "ciencia",
+        "title": "Consolidació de la Royal Society",
+        "year": 1660,
+        "description": "Consolidació de sessions científiques regulars i cultura de publicació."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-14",
+    "items": [
+      {
+        "type": "person",
+        "category": "fisica",
+        "title": "Naixement de Chien-Shiung Wu",
+        "year": 1912,
+        "description": "Naixement de la física associada a la demostració de la violació de la paritat."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Llançament de Sputnik 3",
+        "year": 1958,
+        "description": "Llançament d’un dels primers laboratoris científics orbitals."
+      },
+      {
+        "type": "person",
+        "category": "medicina",
+        "title": "Naixement d’Albert Schweitzer",
+        "year": 1875,
+        "description": "Naixement d’un referent en ètica científica i medicina."
+      },
+      {
+        "type": "organization",
+        "category": "ciencia",
+        "title": "Creació de la Max Planck Society",
+        "year": 1948,
+        "description": "Fundació de l’organisme successor de la Kaiser Wilhelm per impulsar la recerca."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-15",
+    "items": [
+      {
+        "type": "person",
+        "category": "astronomia",
+        "title": "Naixement de Carolyn Shoemaker",
+        "year": 1929,
+        "description": "Naixement de la codescobridora del cometa Shoemaker–Levy 9."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Aterratge de la sonda Huygens a Tità",
+        "year": 2005,
+        "description": "Aterratge amb èxit sobre la superfície de Tità, satèl·lit de Saturn."
+      },
+      {
+        "type": "person",
+        "category": "fisica",
+        "title": "Naixement d’André-Marie Ampère",
+        "year": 1775,
+        "description": "Naixement d’un dels fundadors de l’electromagnetisme."
+      },
+      {
+        "type": "organization",
+        "category": "fisica",
+        "title": "Inici d’activitats del CERN",
+        "year": 1954,
+        "description": "Inici de les activitats del principal centre europeu de física de partícules."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-16",
+    "items": [
+      {
+        "type": "person",
+        "category": "astronomia",
+        "title": "Mort de Johannes Kepler",
+        "year": 1630,
+        "description": "Mort de l’autor de les lleis del moviment planetari."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Llançament de STS-107 (Columbia)",
+        "year": 2003,
+        "description": "Llançament de la darrera missió del transbordador Columbia."
+      },
+      {
+        "type": "person",
+        "category": "geografia",
+        "title": "Naixement de Fanny Bullock Workman",
+        "year": 1859,
+        "description": "Naixement de pionera en geografia d’alta muntanya i glaciologia."
+      },
+      {
+        "type": "organization",
+        "category": "astronomia",
+        "title": "Consolidació de la Unió Astronòmica Internacional",
+        "year": 1919,
+        "description": "Consolidació d’estàndards internacionals per a nomenclatura i coordinació astronòmica."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-17",
+    "items": [
+      {
+        "type": "person",
+        "category": "fisica",
+        "title": "Naixement de Benjamin Franklin",
+        "year": 1706,
+        "description": "Naixement del pioner de l’estudi experimental de l’electricitat."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Llançament de STS-51 amb la sonda Ulysses",
+        "year": 1990,
+        "description": "Llançament del transbordador Discovery amb la sonda solar Ulysses."
+      },
+      {
+        "type": "person",
+        "category": "astronomia",
+        "title": "Naixement de Sophia Brahe",
+        "year": 1556,
+        "description": "Naixement de col·laboradora clau en observació astronòmica del segle XVI."
+      },
+      {
+        "type": "organization",
+        "category": "fisica",
+        "title": "Fundació de l’American Physical Society",
+        "year": 1899,
+        "description": "Creació d’una de les societats científiques més influents en física."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-18",
+    "items": [
+      {
+        "type": "person",
+        "category": "astronomia",
+        "title": "Naixement de Jocelyn Bell Burnell",
+        "year": 1943,
+        "description": "Naixement de la descobridora dels púlsars."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Primera transmissió de dades des de Venus (Venera 7)",
+        "year": 1971,
+        "description": "Primera transmissió de dades des de la superfície de Venus."
+      },
+      {
+        "type": "person",
+        "category": "pensament",
+        "title": "Naixement de Montesquieu",
+        "year": 1689,
+        "description": "Naixement d’un referent del pensament il·lustrat que va influir en ciència i societat."
+      },
+      {
+        "type": "organization",
+        "category": "astronomia",
+        "title": "Aprovació del projecte fundacional de l’ESO",
+        "year": 1962,
+        "description": "Aprovació del projecte científic que conduiria a l’Observatori Europeu Austral."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-19",
+    "items": [
+      {
+        "type": "person",
+        "category": "enginyeria",
+        "title": "Naixement de James Watt",
+        "year": 1736,
+        "description": "Naixement del perfeccionador de la màquina de vapor, clau en la revolució industrial."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Llançament de New Horizons",
+        "year": 2006,
+        "description": "Llançament de la missió cap a Plutó i el cinturó de Kuiper."
+      },
+      {
+        "type": "publication",
+        "category": "informatica",
+        "title": "Publicació del primer algorisme informàtic (Ada Lovelace)",
+        "year": 1843,
+        "description": "Publicació del primer algorisme informàtic en el marc del projecte de Babbage."
+      },
+      {
+        "type": "organization",
+        "category": "tecnologia",
+        "title": "Creació de l’IEEE",
+        "year": 1963,
+        "description": "Creació de l’entitat professional clau en enginyeria elèctrica i informàtica."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-20",
+    "items": [
+      {
+        "type": "person",
+        "category": "astronomia",
+        "title": "Naixement d’Edwin Hubble",
+        "year": 1889,
+        "description": "Naixement del científic associat a la demostració de l’expansió de l’Univers."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Prova orbital del mòdul lunar (Apollo 5)",
+        "year": 1968,
+        "description": "Prova en òrbita del mòdul lunar com a pas previ a les missions tripulades."
+      },
+      {
+        "type": "person",
+        "category": "matematiques",
+        "title": "Naixement de Sophie Germain",
+        "year": 1776,
+        "description": "Naixement de pionera en teoria de nombres i elasticitat."
+      },
+      {
+        "type": "organization",
+        "category": "espai",
+        "title": "Inici operatiu de programes europeus de missions científiques",
+        "year": 2003,
+        "description": "Inici operatiu de missions i programes científics europeus de llarg termini."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-21",
+    "items": [
+      {
+        "type": "person",
+        "category": "fisica",
+        "title": "Naixement d’Émilie du Châtelet",
+        "year": 1706,
+        "description": "Naixement de la científica que va difondre i interpretar Newton a l’Europa continental."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Retorn de mostres lunars (Luna 20)",
+        "year": 1972,
+        "description": "Retorn automàtic de mostres lunars a la Terra."
+      },
+      {
+        "type": "person",
+        "category": "astronomia",
+        "title": "Naixement de John Couch Adams",
+        "year": 1819,
+        "description": "Naixement del codescobridor teòric del planeta Neptú."
+      },
+      {
+        "type": "organization",
+        "category": "divulgacio",
+        "title": "Impuls de la Royal Institution",
+        "year": 1799,
+        "description": "Impuls institucional a la divulgació científica pública i les demostracions experimentals."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-22",
+    "items": [
+      {
+        "type": "person",
+        "category": "ciencia",
+        "title": "Mort de Francis Bacon",
+        "year": 1626,
+        "description": "Mort d’un dels fundadors del mètode científic modern basat en observació i experimentació."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Llançament de Landsat 8",
+        "year": 2013,
+        "description": "Llançament d’un satèl·lit clau per al seguiment ambiental global."
+      },
+      {
+        "type": "person",
+        "category": "fisica",
+        "title": "Naixement de Lev Landau",
+        "year": 1908,
+        "description": "Naixement d’un referent de la física teòrica del segle XX."
+      },
+      {
+        "type": "organization",
+        "category": "ciencia",
+        "title": "Coordinació internacional de la recerca (ICSU)",
+        "year": 1931,
+        "description": "Impuls de la coordinació internacional de la recerca científica."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-23",
+    "items": [
+      {
+        "type": "person",
+        "category": "espai",
+        "title": "Naixement de Sally Ride",
+        "year": 1951,
+        "description": "Naixement de la primera dona dels EUA a l’espai."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Primera missió dels EUA amb una astronauta (STS-7)",
+        "year": 1983,
+        "description": "Primera missió nord-americana que inclou una dona astronauta."
+      },
+      {
+        "type": "person",
+        "category": "fisica",
+        "title": "Naixement d’Édouard Branly",
+        "year": 1844,
+        "description": "Naixement d’un pioner en la detecció d’ones radioelèctriques."
+      },
+      {
+        "type": "organization",
+        "category": "biologia",
+        "title": "Inici de projectes europeus en biologia molecular (EMBL)",
+        "year": 1974,
+        "description": "Inici d’un centre europeu de recerca clau en biologia molecular."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-24",
+    "items": [
+      {
+        "type": "person",
+        "category": "biologia",
+        "title": "Naixement de Rosalind Franklin",
+        "year": 1920,
+        "description": "Naixement de la científica clau en l’estudi de l’estructura de l’ADN."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Pas proper de Voyager 2 per Urà",
+        "year": 1986,
+        "description": "Primer estudi detallat del planeta Urà i el seu sistema de satèl·lits."
+      },
+      {
+        "type": "person",
+        "category": "fisica",
+        "title": "Naixement de Michael Faraday",
+        "year": 1791,
+        "description": "Naixement del pioner de l’electromagnetisme i l’electroquímica."
+      },
+      {
+        "type": "organization",
+        "category": "quimica",
+        "title": "Consolidació de societats científiques de química",
+        "year": 1841,
+        "description": "Consolidació institucional de la química moderna en l’àmbit acadèmic."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-25",
+    "items": [
+      {
+        "type": "person",
+        "category": "informatica",
+        "title": "Naixement d’Ada Lovelace",
+        "year": 1815,
+        "description": "Naixement de la matemàtica considerada la primera programadora de la història."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Operació del rover Sojourner (Mars Pathfinder)",
+        "year": 1997,
+        "description": "Validació del funcionament del rover Sojourner en el marc de Mars Pathfinder."
+      },
+      {
+        "type": "person",
+        "category": "quimica",
+        "title": "Mort de Robert Boyle",
+        "year": 1691,
+        "description": "Mort d’un dels fundadors de la química moderna i de la llei dels gasos."
+      },
+      {
+        "type": "organization",
+        "category": "informatica",
+        "title": "Fundació de l’Association for Computing Machinery (ACM)",
+        "year": 1947,
+        "description": "Creació d’una de les principals societats científiques d’informàtica."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-26",
+    "items": [
+      {
+        "type": "person",
+        "category": "medicina",
+        "title": "Naixement d’Edward Jenner",
+        "year": 1749,
+        "description": "Naixement del pioner de la vacunació i inici de la immunologia moderna."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Missió de reparació orbital (STS-41-C)",
+        "year": 1984,
+        "description": "Primera missió de reparació orbital amb captura i servei de satèl·lit."
+      },
+      {
+        "type": "person",
+        "category": "quimica",
+        "title": "Naixement de Dorothy Hodgkin",
+        "year": 1910,
+        "description": "Naixement de la pionera en cristal·lografia de raigs X."
+      },
+      {
+        "type": "organization",
+        "category": "salut",
+        "title": "Consolidació de programes de salut global",
+        "year": 1948,
+        "description": "Consolidació dels programes internacionals de salut pública a escala global."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-27",
+    "items": [
+      {
+        "type": "person",
+        "category": "tecnologia",
+        "title": "Mort de Johannes Gutenberg",
+        "year": 1468,
+        "description": "Mort de l’inventor de la impremta de tipus mòbils, clau per difondre coneixement científic."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Accident durant una prova d’Apollo 1",
+        "year": 1967,
+        "description": "Accident durant una prova que va redefinir protocols de seguretat espacial."
+      },
+      {
+        "type": "person",
+        "category": "astronomia",
+        "title": "Naixement de Caroline Herschel",
+        "year": 1750,
+        "description": "Naixement d’una astrònoma pionera i descobridora de diversos cometes."
+      },
+      {
+        "type": "organization",
+        "category": "salut",
+        "title": "Desenvolupament de protocols sanitaris internacionals",
+        "year": 1863,
+        "description": "Desenvolupament de protocols humanitaris i sanitaris amb base científica."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-28",
+    "items": [
+      {
+        "type": "person",
+        "category": "tecnologia",
+        "title": "Naixement d’Hedy Lamarr",
+        "year": 1914,
+        "description": "Naixement de la coinventora del sistema base del salt de freqüència, precursor de tecnologies sense fils."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Accident del transbordador Challenger (STS-51-L)",
+        "year": 1986,
+        "description": "Accident del Challenger durant l’enlairament, amb fort impacte en la seguretat aeroespacial."
+      },
+      {
+        "type": "person",
+        "category": "biologia",
+        "title": "Naixement d’Ernst Mayr",
+        "year": 1904,
+        "description": "Naixement d’un arquitecte de la síntesi evolutiva moderna."
+      },
+      {
+        "type": "organization",
+        "category": "ciencia",
+        "title": "Inici de programes europeus d’excel·lència (ERC)",
+        "year": 2007,
+        "description": "Inici dels programes europeus de finançament científic d’excel·lència."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-29",
+    "items": [
+      {
+        "type": "person",
+        "category": "astronomia",
+        "title": "Mort de William Herschel",
+        "year": 1822,
+        "description": "Mort del descobridor del planeta Urà i pioner de l’astronomia estel·lar."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Llançament de Soyuz TM-28 cap a l’ISS",
+        "year": 1999,
+        "description": "Llançament d’una missió tripulada cap a l’Estació Espacial Internacional."
+      },
+      {
+        "type": "person",
+        "category": "bioquimica",
+        "title": "Naixement de Gertrude Elion",
+        "year": 1918,
+        "description": "Naixement de pionera en el desenvolupament racional de fàrmacs."
+      },
+      {
+        "type": "organization",
+        "category": "salut",
+        "title": "Creació de l’agència europea del medicament",
+        "year": 1995,
+        "description": "Creació d’una agència reguladora clau per a l’avaluació de medicaments a Europa."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-30",
+    "items": [
+      {
+        "type": "person",
+        "category": "quimica",
+        "title": "Mort de Dorothy Hodgkin",
+        "year": 1994,
+        "description": "Mort de la premi Nobel per la cristal·lografia de raigs X aplicada a molècules biològiques."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Primera imatge de la Terra des de l’espai (Explorer 6)",
+        "year": 1959,
+        "description": "Obtenció d’una de les primeres imatges de la Terra vista des de l’espai."
+      },
+      {
+        "type": "person",
+        "category": "matematiques",
+        "title": "Naixement d’Alfred North Whitehead",
+        "year": 1861,
+        "description": "Naixement del coautor dels Principia Mathematica i referent en lògica i filosofia de la ciència."
+      },
+      {
+        "type": "organization",
+        "category": "matematiques",
+        "title": "Fundació de la European Mathematical Society",
+        "year": 1990,
+        "description": "Fundació d’una entitat europea de referència en matemàtiques."
+      }
+    ]
+  },
+  {
+    "date": "2026-01-31",
+    "items": [
+      {
+        "type": "person",
+        "category": "espai",
+        "title": "Naixement de Mae Jemison",
+        "year": 1956,
+        "description": "Naixement de la primera dona afroamericana que va viatjar a l’espai."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Aterratge d’Apollo 14 a la Lluna",
+        "year": 1971,
+        "description": "Aterratge lunar amb experiments geològics avançats i treball de camp científic."
+      },
+      {
+        "type": "person",
+        "category": "virologia",
+        "title": "Naixement de Luc Montagnier",
+        "year": 1932,
+        "description": "Naixement del codescobridor del VIH."
+      },
+      {
+        "type": "organization",
+        "category": "espai",
+        "title": "Consolidació de la cooperació espacial europea (ESRO)",
+        "year": 1964,
+        "description": "Consolidació institucional de la cooperació espacial europea, antecedent de l’ESA."
+      }
+    ]
+  }
+]

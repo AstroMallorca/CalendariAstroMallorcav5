@@ -637,7 +637,6 @@ function obreModalDetallFoto(f) {
   `;
   modal.classList.remove("ocult");
 }
-
 function dibuixaMes(isoYM) {
   graella.innerHTML = "";
 

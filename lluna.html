@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Lluna</title>
+</head>
+<body style="font-family:system-ui;padding:16px">
+  <a href="./">← Tornar</a>
+  <h1>Sortida i posta de Lluna</h1>
+  <p>Data: <span id="d"></span></p>
+  <script>
+    const p = new URLSearchParams(location.search);
+    document.getElementById("d").textContent = p.get("date") || "";
+  </script>
+</body>
+</html>

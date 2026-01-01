@@ -636,7 +636,6 @@ function obreModalDetallFoto(f) {
     <p>${f.descripcio_llarga || f.descripcio_curta || ""}</p>
   `;
   modal.classList.remove("ocult");
-  };
 }
 
 function dibuixaMes(isoYM) {
@@ -889,7 +888,7 @@ async function obreDia(iso) {
   });
 
   modal.classList.remove("ocult");
-
+}
 
 document.querySelector(".tancar").onclick = () => modal.classList.add("ocult");
 botoNocturn.onclick = () => document.body.classList.toggle("nocturn");

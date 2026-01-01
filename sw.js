@@ -11,6 +11,11 @@ const CORE_ASSETS = [
   "app.js",
   "sw.js",
   "manifest.webmanifest",
+  "sol.html",
+  "lluna.html",
+  "planetes.html",
+  "messiers.html",
+
 
   // Icones PWA (segons la teva estructura)
   "assets/icons/icon-192.png",

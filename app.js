@@ -628,15 +628,55 @@ function setFotoMes(isoYM) {
   };
 }
 function obreModalDetallFoto(f) {
+  // helper: pinta una línia només si hi ha valor
+  const field = (label, value) => {
+    const v = (value ?? "").toString().trim();
+    if (!v) return "";
+    return `<p><b>${label}:</b> ${v}</p>`;
+  };
+
+  // alguns fulls poden dir "credit" o "credits"
+  const credits = (f.credits ?? f.credit ?? "").toString().trim();
+
+  // ordre i condicions tal com demanes
+  const metaHtml = [
+    field("Autor", f.autor),
+    field("Lloc", f.lloc),
+
+    field("Data", f.data_feta),
+    field("Càmera", f.camera),
+    field("Objectiu", f.objectiu),
+    field("Exposició", f.exposicio),
+    field("ISO", f.iso),
+    field("f", f.f),
+    field("Crèdits", credits),
+  ].join("");
+
+  const descCurta  = (f.descripcio_curta  ?? "").toString().trim();
+  const descLlarga = (f.descripcio_llarga ?? "").toString().trim();
+
   contingutDia.innerHTML = `
-    <h2>${f.titol || ""}</h2>
-    ${f.imatge ? `<img src="${f.imatge}" alt="${f.titol || ""}" style="width:100%;border-radius:10px">` : ""}
-    <p><b>Autor:</b> ${f.autor || ""}</p>
-    <p><b>Lloc:</b> ${f.lloc || ""}</p>
-    <p>${f.descripcio_llarga || f.descripcio_curta || ""}</p>
+    <h2 style="text-align:center;margin:0 0 12px 0;">
+      ${f.titol || ""}
+    </h2>
+
+    ${f.imatge ? `
+      <img src="${f.imatge}"
+           alt="${(f.titol || "").replace(/"/g, "&quot;")}"
+           style="width:100%;border-radius:16px;display:block;margin:0 auto 14px auto;">
+    ` : ""}
+
+    <div style="line-height:1.45">
+      ${metaHtml}
+    </div>
+
+    ${descCurta ? `<p style="margin-top:14px">${descCurta}</p>` : ""}
+    ${descLlarga ? `<p style="margin-top:10px;opacity:.9">${descLlarga}</p>` : ""}
   `;
+
   modal.classList.remove("ocult");
 }
+
 function dibuixaMes(isoYM) {
   graella.innerHTML = "";
 

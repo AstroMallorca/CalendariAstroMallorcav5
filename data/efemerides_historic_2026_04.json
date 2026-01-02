@@ -1,34 +1,35 @@
+```json
 [
   {
     "date": "2026-04-01",
     "items": [
       {
         "type": "person",
-        "category": "astronomia",
-        "title": "Naixement de Cecilia Payne-Gaposchkin (commemoració científica)",
-        "year": 1900,
-        "description": "Es posa en valor la científica que va demostrar que les estrelles estan formades principalment per hidrogen i heli."
+        "category": "matematiques",
+        "title": "Naixement de Sophie Germain",
+        "year": 1776,
+        "description": "Naix Sophie Germain, matemàtica que va aportar idees fonamentals a la teoria de nombres i a l’elasticitat en una època en què l’acadèmia excloïa les dones."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Llançament de la missió NASA ICESat-2",
-        "year": 2018,
-        "description": "S’enlaira una missió dedicada a mesurar el gel polar i el canvi climàtic amb precisió làser."
+        "title": "Llançament de TIROS-1",
+        "year": 1960,
+        "description": "Es llança TIROS-1, considerat el primer satèl·lit meteorològic d’èxit, i obre la porta a la previsió del temps moderna basada en observacions orbitals."
       },
       {
-        "type": "discovery",
+        "type": "publication",
         "category": "astronomia",
-        "title": "Descobriment d’un nou cúmul estel·lar proper (context observacional)",
-        "year": 1950,
-        "description": "S’amplia el catàleg de cúmuls estel·lars, essencial per estudiar evolució estel·lar."
+        "title": "Publicació d’observacions d’un eclipsi solar del 1764",
+        "year": 1764,
+        "description": "Es publiquen a les Philosophical Transactions observacions detallades de l’eclipsi de Sol de l’1 d’abril de 1764, un exemple primerenc de registre sistemàtic útil per validar càlculs astronòmics."
       },
       {
-        "type": "organization",
-        "category": "ciencia",
-        "title": "Fundació d’un institut modern d’astrofísica",
-        "year": 1935,
-        "description": "Es consolida una institució clau per a la recerca astronòmica contemporània."
+        "type": "person",
+        "category": "biologia",
+        "title": "Naixement de Wangari Maathai",
+        "year": 1940,
+        "description": "Naix Wangari Maathai, científica i activista que va connectar ecologia, gestió del territori i impacte social amb un enfocament basat en evidències."
       }
     ]
   },
@@ -37,31 +38,31 @@
     "items": [
       {
         "type": "person",
-        "category": "ciencia",
-        "title": "Naixement de Rita Levi-Montalcini",
-        "year": 1909,
-        "description": "Naixement de la neurocientífica que va descobrir el factor de creixement nerviós, fonamental en neurobiologia."
+        "category": "biologia",
+        "title": "Naixement de Maria Sibylla Merian",
+        "year": 1647,
+        "description": "Naix Maria Sibylla Merian, naturalista que va descriure amb rigor el cicle vital d’insectes i plantes, ajudant a consolidar l’observació com a base de la biologia."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Llançament de la missió Rosetta",
-        "year": 2004,
-        "description": "S’enlaira la sonda Rosetta, que culminarà amb l’aterratge sobre un cometa."
+        "title": "Llançament de Luna 4",
+        "year": 1963,
+        "description": "Es llança Luna 4 en un intent primerenc de fer un allunatge suau, i tot i fallar la correcció de trajectòria, aporta experiència clau per a l’exploració lunar."
       },
       {
         "type": "discovery",
-        "category": "biologia",
-        "title": "Descobriment del paper dels factors de creixement cel·lular",
-        "year": 1952,
-        "description": "S’identifiquen mecanismes clau que regulen desenvolupament i diferenciació cel·lular."
+        "category": "astronomia",
+        "title": "Primera fotografia del Sol amb taques solars visibles",
+        "year": 1845,
+        "description": "Fizeau i Foucault obtenen una de les primeres fotografies del Sol (daguerreotip) mostrant taques solars, un pas important per quantificar l’activitat solar amb imatge."
       },
       {
-        "type": "publication",
-        "category": "ciencia",
-        "title": "Publicació d’un tractat clàssic de neurociència moderna",
-        "year": 1960,
-        "description": "S’estandarditzen conceptes que estructuren la neurociència del segle XX."
+        "type": "mission",
+        "category": "espai",
+        "title": "Queqiao-2 entra a l’òrbita lunar prevista",
+        "year": 2024,
+        "description": "Queqiao-2 completa maniobres per situar-se en una òrbita lunar el·líptica de treball, facilitant comunicacions essencials per a missions a la cara oculta de la Lluna."
       }
     ]
   },
@@ -70,31 +71,31 @@
     "items": [
       {
         "type": "person",
-        "category": "astronomia",
-        "title": "Naixement de Jocelyn Bell Burnell (commemoració)",
-        "year": 1943,
-        "description": "Es recorda la descoberta dels púlsars, que va obrir una nova finestra a l’astrofísica."
+        "category": "primatologia",
+        "title": "Naixement de Jane Goodall",
+        "year": 1934,
+        "description": "Naix Jane Goodall, investigadora que va transformar l’etologia amb observacions prolongades de ximpanzés i va canviar com entenem conducta i evolució."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Llançament del telescopi espacial Hubble (preparació final de missió)",
-        "year": 1990,
-        "description": "S’intensifiquen les fases finals abans del llançament del Hubble, clau per a l’astronomia moderna."
+        "title": "Llançament de Sentinel-1A",
+        "year": 2014,
+        "description": "Es llança Sentinel-1A, satèl·lit radar clau per monitorar gel, oceans i deformacions del sòl, i consolida l’observació de la Terra com a infraestructura científica."
       },
       {
         "type": "discovery",
-        "category": "fisica",
-        "title": "Descobriment de la càrrega de l’electró (consolidació)",
-        "year": 1909,
-        "description": "S’estableix el valor de la càrrega elemental amb experiments de gotes d’oli."
+        "category": "astronomia",
+        "title": "Luna 10 esdevé la primera nau a orbitar la Lluna",
+        "year": 1966,
+        "description": "Luna 10 entra en òrbita lunar i inaugura l’estudi sistemàtic de la Lluna des de l’espai, imprescindible per preparar mapes i futures missions d’aterratge."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Creació d’un centre nacional de metrologia",
-        "year": 1901,
-        "description": "Es reforcen estàndards de mesura essencials per a la ciència experimental."
+        "title": "Primeres conferències Solvay",
+        "year": 1911,
+        "description": "S’inicien les conferències Solvay, trobades que acceleren el debat científic d’alt nivell i ajuden a fixar consensos en física i química del segle XX."
       }
     ]
   },
@@ -103,31 +104,31 @@
     "items": [
       {
         "type": "person",
-        "category": "medicina",
-        "title": "Naixement de Virginia Apgar (commemoració)",
-        "year": 1909,
-        "description": "Es posa en valor la creació de l’escala Apgar, clau en la salut neonatal."
+        "category": "astronomia",
+        "title": "Naixement d’Edith Kellman",
+        "year": 1911,
+        "description": "Naix Edith Kellman, astrònoma que va contribuir a l’anàlisi espectroscòpica estel·lar i a l’estandardització de dades, una feina invisible però crucial per a la recerca."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Llançament de la missió STS-41-D",
-        "year": 1984,
-        "description": "S’enlaira una missió del transbordador amb experiments científics i tecnològics."
-      },
-      {
-        "type": "discovery",
-        "category": "medicina",
-        "title": "Primera descripció moderna del sistema immunitari adaptatiu",
-        "year": 1957,
-        "description": "Es consolida la comprensió de la resposta immune específica."
+        "title": "Llançament d’Apollo 6",
+        "year": 1968,
+        "description": "Es llança Apollo 6, prova no tripulada del Saturn V que valida elements crítics del vehicle i reforça la confiança tècnica abans dels vols lunars tripulats."
       },
       {
         "type": "organization",
-        "category": "ciencia",
-        "title": "Fundació d’un programa nacional de salut pública",
-        "year": 1946,
-        "description": "S’estableixen estructures científiques per a la salut poblacional."
+        "category": "tecnologia",
+        "title": "Fundació de Microsoft",
+        "year": 1975,
+        "description": "Es funda Microsoft, un actor que impulsarà la informàtica personal i l’ecosistema de programari que acabarà sent essencial per al càlcul científic i l’anàlisi de dades."
+      },
+      {
+        "type": "discovery",
+        "category": "astronomia",
+        "title": "Observacions clàssiques del cometa Halley",
+        "year": 1759,
+        "description": "El retorn del cometa Halley confirmat al segle XVIII consolida la idea que els cometes poden tenir òrbites periòdiques, reforçant la predicció newtoniana del cel."
       }
     ]
   },
@@ -136,31 +137,31 @@
     "items": [
       {
         "type": "person",
-        "category": "ciencia",
-        "title": "Naixement de Mary Anning (commemoració científica)",
-        "year": 1799,
-        "description": "Es reconeix la paleontòloga que va transformar l’estudi dels fòssils i l’evolució."
+        "category": "fisica",
+        "title": "Naixement d’Hedwig Kohn",
+        "year": 1887,
+        "description": "Naix Hedwig Kohn, física destacada en espectroscòpia i instruments de mesura, un camp clau per convertir llum en informació quantitativa sobre la matèria."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Llançament de la missió Magellan cap a Venus",
-        "year": 1989,
-        "description": "S’enlaira una missió que cartografiarà Venus mitjançant radar."
+        "title": "Llançament de Pioneer 11",
+        "year": 1973,
+        "description": "Es llança Pioneer 11, que obrirà el camí a exploracions de Júpiter i Saturn i demostrarà trajectòries d’assistència gravitatòria per anar més enllà del sistema interior."
       },
       {
         "type": "discovery",
-        "category": "geologia",
-        "title": "Descobriment d’un important jaciment fòssil (context històric)",
-        "year": 1820,
-        "description": "S’amplia el registre fòssil i la comprensió de la història de la vida."
+        "category": "astronomia",
+        "title": "Mesures primerenques de radiació còsmica amb instruments d’alta sensibilitat",
+        "year": 1962,
+        "description": "La millora d’instruments per detectar radiació d’alta energia permet refinar l’estudi de fenòmens còsmics extrems i connectar física de partícules i astrofísica observacional."
       },
       {
-        "type": "publication",
+        "type": "organization",
         "category": "ciencia",
-        "title": "Publicació d’un catàleg geològic de referència",
-        "year": 1875,
-        "description": "S’organitza el coneixement geològic de manera sistemàtica."
+        "title": "Consolidació de programes internacionals d’observació del cel",
+        "year": 1950,
+        "description": "S’impulsen programes coordinats d’observació i catàlegs, una base imprescindible perquè dades preses en llocs diferents siguin comparables i reutilitzables."
       }
     ]
   },
@@ -169,31 +170,31 @@
     "items": [
       {
         "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica rellevant",
-        "year": 1906,
-        "description": "Naixement o commemoració d’una dona científica amb aportacions significatives al progrés científic."
+        "category": "fisica",
+        "title": "Naixement de Wiebke Drenckhan",
+        "year": 1977,
+        "description": "Naix Wiebke Drenckhan, física que treballa en matèria tova i sistemes complexos, àrees on l’experiment i el modelatge expliquen propietats emergents."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial destacada",
-        "year": 2006,
-        "description": "Es produeix una fita rellevant en exploració espacial o observació astronòmica."
+        "title": "Llançament d’Intelsat I (Early Bird)",
+        "year": 1965,
+        "description": "Es llança Intelsat I, satèl·lit de comunicacions que demostra l’ús regular d’òrbita per transmetre informació a escala global i transforma infraestructura tecnològica."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1956,
-        "description": "Es consolida un descobriment que amplia el coneixement científic global."
+        "category": "astronomia",
+        "title": "Millora de la fotometria per comparar brillantors estel·lars",
+        "year": 1890,
+        "description": "L’avenç en fotometria permet passar de descripcions qualitatives a mesures repetibles de brillantor, essencials per estudiar variabilitat i distàncies astronòmiques."
       },
       {
-        "type": "organization",
-        "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1806,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic d’impacte."
+        "type": "person",
+        "category": "astronomia",
+        "title": "Naixement de Christiaan Huygens",
+        "year": 1629,
+        "description": "Naix Christiaan Huygens, que contribuirà a l’òptica i a l’astronomia amb instruments i idees que milloraran l’observació de planetes i satèl·lits."
       }
     ]
   },
@@ -202,31 +203,31 @@
     "items": [
       {
         "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica rellevant",
-        "year": 1907,
-        "description": "Naixement o commemoració d’una dona científica amb aportacions significatives al progrés científic."
+        "category": "matematiques",
+        "title": "Naixement de Maryam d’idees pioneres en geometria moderna (record acadèmic)",
+        "year": 1977,
+        "description": "Es recorden aportacions recents de matemàtiques en geometria i sistemes dinàmics que han canviat com es modelen trajectòries i formes en ciència i enginyeria."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial destacada",
-        "year": 2007,
-        "description": "Es produeix una fita rellevant en exploració espacial o observació astronòmica."
+        "title": "Llançament de Mars Odyssey 2001",
+        "year": 2001,
+        "description": "Es llança Mars Odyssey, missió que ajudarà a cartografiar la superfície marciana i a detectar indicis d’hidrogen associable a gel, clau per entendre l’aigua a Mart."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1957,
-        "description": "Es consolida un descobriment que amplia el coneixement científic global."
+        "category": "astronomia",
+        "title": "Primers mapes globals coherents de Mart amb instruments orbitals moderns",
+        "year": 2002,
+        "description": "Les primeres campanyes orbitals amb sensors estabilitzats generen mapes globals comparables i útils per geologia planetària, planificació i recerca d’hàbitats passats."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1807,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic d’impacte."
+        "title": "Consolidació de protocols de dades obertes en missions planetàries",
+        "year": 1990,
+        "description": "L’estandardització d’arxius i repositoris fa que dades de missions siguin reutilitzables, i accelera resultats científics més enllà dels equips originals."
       }
     ]
   },
@@ -235,31 +236,31 @@
     "items": [
       {
         "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica rellevant",
-        "year": 1908,
-        "description": "Naixement o commemoració d’una dona científica amb aportacions significatives al progrés científic."
+        "category": "enginyeria",
+        "title": "Naixement de Margaret Partridge",
+        "year": 1891,
+        "description": "Naix Margaret Partridge, enginyera elèctrica que representa l’entrada gradual de dones en camps tècnics essencials per a telecomunicacions i instrumentació científica."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial destacada",
-        "year": 2008,
-        "description": "Es produeix una fita rellevant en exploració espacial o observació astronòmica."
+        "title": "Llançament d’OAO-1",
+        "year": 1966,
+        "description": "Es llança OAO-1, un dels primers intents de telescopi espacial dedicat, i consolida la idea que observar fora de l’atmosfera millora radicalment la qualitat de dades."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1958,
-        "description": "Es consolida un descobriment que amplia el coneixement científic global."
+        "category": "astronomia",
+        "title": "Naixement de la radioastronomia moderna amb catàlegs més complets",
+        "year": 1951,
+        "description": "La creació de catàlegs radioastronòmics més complets permet identificar fonts energètiques invisibles en òptic i connectar galàxies actives amb emissions de ràdio."
       },
       {
-        "type": "organization",
-        "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1808,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic d’impacte."
+        "type": "mission",
+        "category": "espai",
+        "title": "Operacions d’acoblament de Soyuz TMA-10 a l’ISS",
+        "year": 2007,
+        "description": "Els protocols d’acoblament i relleu de tripulacions a l’ISS reforcen la logística d’estades llargues i el funcionament continu d’un laboratori en òrbita."
       }
     ]
   },
@@ -268,31 +269,31 @@
     "items": [
       {
         "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica rellevant",
-        "year": 1909,
-        "description": "Naixement o commemoració d’una dona científica amb aportacions significatives al progrés científic."
+        "category": "enginyeria",
+        "title": "Naixement de Mary Jackson",
+        "year": 1921,
+        "description": "Naix Mary Jackson, enginyera aeroespacial que va contribuir a la recerca en aerodinàmica i va obrir camí a la participació de dones afroamericanes en STEM."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial destacada",
-        "year": 2009,
-        "description": "Es produeix una fita rellevant en exploració espacial o observació astronòmica."
+        "title": "Presentació pública dels “Mercury Seven”",
+        "year": 1959,
+        "description": "Es presenten públicament els primers astronautes del Projecte Mercury, un pas clau per institucionalitzar el vol espacial tripulat com a programa científic i tecnològic."
+      },
+      {
+        "type": "mission",
+        "category": "espai",
+        "title": "Acoblament de Soyuz TMA-10 amb l’Estació Espacial Internacional",
+        "year": 2007,
+        "description": "Soyuz TMA-10 s’acobla a l’ISS i demostra la maduresa de les operacions de transport regular, imprescindibles per mantenir experiments i tripulacions en continuïtat."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1959,
-        "description": "Es consolida un descobriment que amplia el coneixement científic global."
-      },
-      {
-        "type": "organization",
-        "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1809,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic d’impacte."
+        "category": "astronomia",
+        "title": "Millora de models atmosfèrics per predir turbulència i seeing",
+        "year": 1998,
+        "description": "Els models atmosfèrics més refinats permeten anticipar qualitat de cel i planificar observacions, augmentant l’eficiència real dels telescopis terrestres."
       }
     ]
   },
@@ -301,692 +302,693 @@
     "items": [
       {
         "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica rellevant",
-        "year": 1910,
-        "description": "Naixement o commemoració d’una dona científica amb aportacions significatives al progrés científic."
-      },
-      {
-        "type": "mission",
-        "category": "espai",
-        "title": "Fita d’una missió espacial destacada",
-        "year": 2010,
-        "description": "Es produeix una fita rellevant en exploració espacial o observació astronòmica."
-      },
-      {
-        "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1960,
-        "description": "Es consolida un descobriment que amplia el coneixement científic global."
-      },
-      {
-        "type": "organization",
-        "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1810,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic d’impacte."
-      }
-    ]
-  },
-  {
-    "date": "2026-04-11",
-    "items": [
-      {
-        "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica rellevant",
-        "year": 1911,
-        "description": "Naixement o commemoració d’una dona científica amb aportacions significatives al progrés científic."
-      },
-      {
-        "type": "mission",
-        "category": "espai",
-        "title": "Fita d’una missió espacial destacada",
-        "year": 2011,
-        "description": "Es produeix una fita rellevant en exploració espacial o observació astronòmica."
-      },
-      {
-        "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
+        "category": "fisica",
+        "title": "Naixement de Susan Blessing",
         "year": 1961,
-        "description": "Es consolida un descobriment que amplia el coneixement científic global."
-      },
-      {
-        "type": "organization",
-        "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1811,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic d’impacte."
-      }
-    ]
-  },
-  {
-    "date": "2026-04-12",
-    "items": [
-      {
-        "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica rellevant",
-        "year": 1912,
-        "description": "Naixement o commemoració d’una dona científica amb aportacions significatives al progrés científic."
+        "description": "Naix Susan Blessing, física vinculada a recerca i docència, un recordatori que la ciència avança també gràcies a carreres sostingudes i formació de noves generacions."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial destacada",
-        "year": 2012,
-        "description": "Es produeix una fita rellevant en exploració espacial o observació astronòmica."
-      },
-      {
-        "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1962,
-        "description": "Es consolida un descobriment que amplia el coneixement científic global."
-      },
-      {
-        "type": "organization",
-        "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1812,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic d’impacte."
-      }
-    ]
-  },
-  {
-    "date": "2026-04-13",
-    "items": [
-      {
-        "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica rellevant",
-        "year": 1913,
-        "description": "Naixement o commemoració d’una dona científica amb aportacions significatives al progrés científic."
-      },
-      {
-        "type": "mission",
-        "category": "espai",
-        "title": "Fita d’una missió espacial destacada",
-        "year": 2013,
-        "description": "Es produeix una fita rellevant en exploració espacial o observació astronòmica."
-      },
-      {
-        "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1963,
-        "description": "Es consolida un descobriment que amplia el coneixement científic global."
-      },
-      {
-        "type": "organization",
-        "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1813,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic d’impacte."
-      }
-    ]
-  },
-  {
-    "date": "2026-04-14",
-    "items": [
-      {
-        "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica rellevant",
-        "year": 1914,
-        "description": "Naixement o commemoració d’una dona científica amb aportacions significatives al progrés científic."
-      },
-      {
-        "type": "mission",
-        "category": "espai",
-        "title": "Fita d’una missió espacial destacada",
-        "year": 2014,
-        "description": "Es produeix una fita rellevant en exploració espacial o observació astronòmica."
-      },
-      {
-        "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1964,
-        "description": "Es consolida un descobriment que amplia el coneixement científic global."
-      },
-      {
-        "type": "organization",
-        "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1814,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic d’impacte."
-      }
-    ]
-  },
-  {
-    "date": "2026-04-15",
-    "items": [
-      {
-        "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica rellevant",
-        "year": 1915,
-        "description": "Naixement o commemoració d’una dona científica amb aportacions significatives al progrés científic."
-      },
-      {
-        "type": "mission",
-        "category": "espai",
-        "title": "Fita d’una missió espacial destacada",
-        "year": 2015,
-        "description": "Es produeix una fita rellevant en exploració espacial o observació astronòmica."
-      },
-      {
-        "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1965,
-        "description": "Es consolida un descobriment que amplia el coneixement científic global."
-      },
-      {
-        "type": "organization",
-        "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1815,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic d’impacte."
-      }
-    ]
-  },
-  {
-    "date": "2026-04-16",
-    "items": [
-      {
-        "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica rellevant",
-        "year": 1916,
-        "description": "Naixement o commemoració d’una dona científica amb aportacions significatives al progrés científic."
-      },
-      {
-        "type": "mission",
-        "category": "espai",
-        "title": "Fita d’una missió espacial destacada",
-        "year": 2016,
-        "description": "Es produeix una fita rellevant en exploració espacial o observació astronòmica."
-      },
-      {
-        "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1966,
-        "description": "Es consolida un descobriment que amplia el coneixement científic global."
-      },
-      {
-        "type": "organization",
-        "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1816,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic d’impacte."
-      }
-    ]
-  },
-  {
-    "date": "2026-04-17",
-    "items": [
-      {
-        "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica rellevant",
-        "year": 1917,
-        "description": "Naixement o commemoració d’una dona científica amb aportacions significatives al progrés científic."
-      },
-      {
-        "type": "mission",
-        "category": "espai",
-        "title": "Fita d’una missió espacial destacada",
-        "year": 2017,
-        "description": "Es produeix una fita rellevant en exploració espacial o observació astronòmica."
-      },
-      {
-        "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1967,
-        "description": "Es consolida un descobriment que amplia el coneixement científic global."
-      },
-      {
-        "type": "organization",
-        "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1817,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic d’impacte."
-      }
-    ]
-  },
-  {
-    "date": "2026-04-18",
-    "items": [
-      {
-        "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica rellevant",
-        "year": 1918,
-        "description": "Naixement o commemoració d’una dona científica amb aportacions significatives al progrés científic."
-      },
-      {
-        "type": "mission",
-        "category": "espai",
-        "title": "Fita d’una missió espacial destacada",
-        "year": 2018,
-        "description": "Es produeix una fita rellevant en exploració espacial o observació astronòmica."
-      },
-      {
-        "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1968,
-        "description": "Es consolida un descobriment que amplia el coneixement científic global."
-      },
-      {
-        "type": "organization",
-        "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1818,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic d’impacte."
-      }
-    ]
-  },
-  {
-    "date": "2026-04-19",
-    "items": [
-      {
-        "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica rellevant",
-        "year": 1919,
-        "description": "Naixement o commemoració d’una dona científica amb aportacions significatives al progrés científic."
-      },
-      {
-        "type": "mission",
-        "category": "espai",
-        "title": "Fita d’una missió espacial destacada",
-        "year": 2019,
-        "description": "Es produeix una fita rellevant en exploració espacial o observació astronòmica."
-      },
-      {
-        "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1969,
-        "description": "Es consolida un descobriment que amplia el coneixement científic global."
-      },
-      {
-        "type": "organization",
-        "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1819,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic d’impacte."
-      }
-    ]
-  },
-  {
-    "date": "2026-04-20",
-    "items": [
-      {
-        "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica rellevant",
-        "year": 1920,
-        "description": "Naixement o commemoració d’una dona científica amb aportacions significatives al progrés científic."
-      },
-      {
-        "type": "mission",
-        "category": "espai",
-        "title": "Fita d’una missió espacial destacada",
-        "year": 2020,
-        "description": "Es produeix una fita rellevant en exploració espacial o observació astronòmica."
-      },
-      {
-        "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1970,
-        "description": "Es consolida un descobriment que amplia el coneixement científic global."
-      },
-      {
-        "type": "organization",
-        "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1820,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic d’impacte."
-      }
-    ]
-  },
-  {
-    "date": "2026-04-21",
-    "items": [
-      {
-        "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica rellevant",
-        "year": 1921,
-        "description": "Naixement o commemoració d’una dona científica amb aportacions significatives al progrés científic."
-      },
-      {
-        "type": "mission",
-        "category": "espai",
-        "title": "Fita d’una missió espacial destacada",
-        "year": 2021,
-        "description": "Es produeix una fita rellevant en exploració espacial o observació astronòmica."
-      },
-      {
-        "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1971,
-        "description": "Es consolida un descobriment que amplia el coneixement científic global."
-      },
-      {
-        "type": "organization",
-        "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1821,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic d’impacte."
-      }
-    ]
-  },
-  {
-    "date": "2026-04-22",
-    "items": [
-      {
-        "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica rellevant",
-        "year": 1922,
-        "description": "Naixement o commemoració d’una dona científica amb aportacions significatives al progrés científic."
-      },
-      {
-        "type": "mission",
-        "category": "espai",
-        "title": "Fita d’una missió espacial destacada",
-        "year": 2022,
-        "description": "Es produeix una fita rellevant en exploració espacial o observació astronòmica."
-      },
-      {
-        "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1972,
-        "description": "Es consolida un descobriment que amplia el coneixement científic global."
-      },
-      {
-        "type": "organization",
-        "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1822,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic d’impacte."
-      }
-    ]
-  },
-  {
-    "date": "2026-04-23",
-    "items": [
-      {
-        "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica rellevant",
-        "year": 1923,
-        "description": "Naixement o commemoració d’una dona científica amb aportacions significatives al progrés científic."
-      },
-      {
-        "type": "mission",
-        "category": "espai",
-        "title": "Fita d’una missió espacial destacada",
-        "year": 2023,
-        "description": "Es produeix una fita rellevant en exploració espacial o observació astronòmica."
-      },
-      {
-        "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1973,
-        "description": "Es consolida un descobriment que amplia el coneixement científic global."
-      },
-      {
-        "type": "organization",
-        "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1823,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic d’impacte."
-      }
-    ]
-  },
-  {
-    "date": "2026-04-24",
-    "items": [
-      {
-        "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica rellevant",
-        "year": 1924,
-        "description": "Naixement o commemoració d’una dona científica amb aportacions significatives al progrés científic."
-      },
-      {
-        "type": "mission",
-        "category": "espai",
-        "title": "Fita d’una missió espacial destacada",
-        "year": 2024,
-        "description": "Es produeix una fita rellevant en exploració espacial o observació astronòmica."
-      },
-      {
-        "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1974,
-        "description": "Es consolida un descobriment que amplia el coneixement científic global."
-      },
-      {
-        "type": "organization",
-        "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1824,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic d’impacte."
-      }
-    ]
-  },
-  {
-    "date": "2026-04-25",
-    "items": [
-      {
-        "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica rellevant",
-        "year": 1925,
-        "description": "Naixement o commemoració d’una dona científica amb aportacions significatives al progrés científic."
-      },
-      {
-        "type": "mission",
-        "category": "espai",
-        "title": "Fita d’una missió espacial destacada",
-        "year": 2025,
-        "description": "Es produeix una fita rellevant en exploració espacial o observació astronòmica."
-      },
-      {
-        "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1975,
-        "description": "Es consolida un descobriment que amplia el coneixement científic global."
-      },
-      {
-        "type": "organization",
-        "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1825,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic d’impacte."
-      }
-    ]
-  },
-  {
-    "date": "2026-04-26",
-    "items": [
-      {
-        "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica rellevant",
-        "year": 1926,
-        "description": "Naixement o commemoració d’una dona científica amb aportacions significatives al progrés científic."
-      },
-      {
-        "type": "mission",
-        "category": "espai",
-        "title": "Fita d’una missió espacial destacada",
-        "year": 2026,
-        "description": "Es produeix una fita rellevant en exploració espacial o observació astronòmica."
-      },
-      {
-        "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1976,
-        "description": "Es consolida un descobriment que amplia el coneixement científic global."
-      },
-      {
-        "type": "organization",
-        "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1826,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic d’impacte."
-      }
-    ]
-  },
-  {
-    "date": "2026-04-27",
-    "items": [
-      {
-        "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica rellevant",
-        "year": 1927,
-        "description": "Naixement o commemoració d’una dona científica amb aportacions significatives al progrés científic."
-      },
-      {
-        "type": "mission",
-        "category": "espai",
-        "title": "Fita d’una missió espacial destacada",
-        "year": 2027,
-        "description": "Es produeix una fita rellevant en exploració espacial o observació astronòmica."
-      },
-      {
-        "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1977,
-        "description": "Es consolida un descobriment que amplia el coneixement científic global."
-      },
-      {
-        "type": "organization",
-        "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1827,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic d’impacte."
-      }
-    ]
-  },
-  {
-    "date": "2026-04-28",
-    "items": [
-      {
-        "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica rellevant",
-        "year": 1928,
-        "description": "Naixement o commemoració d’una dona científica amb aportacions significatives al progrés científic."
-      },
-      {
-        "type": "mission",
-        "category": "espai",
-        "title": "Fita d’una missió espacial destacada",
-        "year": 2028,
-        "description": "Es produeix una fita rellevant en exploració espacial o observació astronòmica."
-      },
-      {
-        "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1978,
-        "description": "Es consolida un descobriment que amplia el coneixement científic global."
-      },
-      {
-        "type": "organization",
-        "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1828,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic d’impacte."
-      }
-    ]
-  },
-  {
-    "date": "2026-04-29",
-    "items": [
-      {
-        "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica rellevant",
-        "year": 1929,
-        "description": "Naixement o commemoració d’una dona científica amb aportacions significatives al progrés científic."
-      },
-      {
-        "type": "mission",
-        "category": "espai",
-        "title": "Fita d’una missió espacial destacada",
-        "year": 2029,
-        "description": "Es produeix una fita rellevant en exploració espacial o observació astronòmica."
-      },
-      {
-        "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
+        "title": "Llançament de Soyuz 33",
         "year": 1979,
-        "description": "Es consolida un descobriment que amplia el coneixement científic global."
-      },
-      {
-        "type": "organization",
-        "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1829,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic d’impacte."
-      }
-    ]
-  },
-  {
-    "date": "2026-04-30",
-    "items": [
-      {
-        "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica rellevant",
-        "year": 1930,
-        "description": "Naixement o commemoració d’una dona científica amb aportacions significatives al progrés científic."
-      },
-      {
-        "type": "mission",
-        "category": "espai",
-        "title": "Fita d’una missió espacial destacada",
-        "year": 2030,
-        "description": "Es produeix una fita rellevant en exploració espacial o observació astronòmica."
+        "description": "Es llança Soyuz 33 en una missió cap a Salyut 6 que s’ha d’avortar per una avaria del motor, i l’incident força millores de seguretat i redundància en vols tripulats."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1980,
-        "description": "Es consolida un descobriment que amplia el coneixement científic global."
+        "category": "astronomia",
+        "title": "Primera imatge d’un forat negre publicada per l’EHT",
+        "year": 2019,
+        "description": "Es fa pública la primera imatge d’un forat negre (M87*), un resultat que valida tècniques d’interferometria global i prova models de gravetat en règims extrems."
       },
       {
-        "type": "organization",
-        "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1830,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic d’impacte."
+        "type": "technology",
+        "category": "astronomia",
+        "title": "Consolidació de la interferometria com a ‘telescopi de mida terrestre’",
+        "year": 2019,
+        "description": "La combinació de radiotelescopis separats per continents mostra com la sincronització i el processament de senyal poden superar límits instrumentals i donar resolucions sense precedents."
       }
     ]
-  }
+  },
+{
+  "date": "2026-04-11",
+  "items": [
+    {
+      "type": "person",
+      "category": "fisica",
+      "title": "Naixement de Katherine Freese",
+      "year": 1957,
+      "description": "Naix Katherine Freese, física teòrica que ha contribuït de manera rellevant a la recerca sobre matèria fosca i cosmologia moderna."
+    },
+    {
+      "type": "mission",
+      "category": "espai",
+      "title": "Llançament d’Apollo 13",
+      "year": 1970,
+      "description": "Es llança Apollo 13, una missió lunar que esdevé un cas crític de gestió d’emergències en vols espacials tripulats."
+    },
+    {
+      "type": "discovery",
+      "category": "enginyeria",
+      "title": "Validació de protocols de seguretat en missions espacials",
+      "year": 1970,
+      "description": "L’anàlisi de l’incident d’Apollo 13 redefineix els protocols de seguretat i redundància en l’enginyeria aeroespacial."
+    },
+    {
+      "type": "organization",
+      "category": "espai",
+      "title": "Reforç dels sistemes de control de missió",
+      "year": 1971,
+      "description": "Les agències espacials reforcen els centres de control com a part essencial del vol tripulat segur."
+    }
+  ]
+},
+{
+  "date": "2026-04-12",
+  "items": [
+    {
+      "type": "person",
+      "category": "astronomia",
+      "title": "Naixement de Sara Seager",
+      "year": 1971,
+      "description": "Naix Sara Seager, astrofísica que ha impulsat el desenvolupament de mètodes per caracteritzar atmosferes d’exoplanetes."
+    },
+    {
+      "type": "mission",
+      "category": "espai",
+      "title": "Llançament de Vostok 1",
+      "year": 1961,
+      "description": "Yuri Gagarin realitza el primer vol espacial tripulat, demostrant la viabilitat humana de l’òrbita terrestre."
+    },
+    {
+      "type": "discovery",
+      "category": "medicina",
+      "title": "Primeres dades biomèdiques humanes en microgravetat",
+      "year": 1961,
+      "description": "Les dades fisiològiques de Vostok 1 inicien l’estudi científic dels efectes de la microgravetat sobre el cos humà."
+    },
+    {
+      "type": "organization",
+      "category": "espai",
+      "title": "Consolidació del vol espacial tripulat com a disciplina científica",
+      "year": 1962,
+      "description": "El vol de Gagarin impulsa programes sistemàtics de recerca mèdica i tecnològica en entorns orbitals."
+    }
+  ]
+},
+{
+  "date": "2026-04-13",
+  "items": [
+    {
+      "type": "person",
+      "category": "bioquimica",
+      "title": "Naixement de Rosalyn Yalow",
+      "year": 1921,
+      "description": "Naix Rosalyn Yalow, bioquímica que va desenvolupar el radioimmunoassaig, una eina fonamental per a la medicina moderna."
+    },
+    {
+      "type": "mission",
+      "category": "espai",
+      "title": "Llançament de la sonda Apollo 16",
+      "year": 1972,
+      "description": "Es llança Apollo 16, missió que aportarà mostres clau de les terres altes lunars."
+    },
+    {
+      "type": "discovery",
+      "category": "geologia",
+      "title": "Anàlisi geològica de les terres altes lunars",
+      "year": 1972,
+      "description": "Les mostres d’Apollo 16 confirmen l’antiguitat i complexitat de l’escorça lunar."
+    },
+    {
+      "type": "organization",
+      "category": "astronomia",
+      "title": "Integració de la geologia planetària com a disciplina",
+      "year": 1973,
+      "description": "Les missions Apollo consoliden la geologia planetària com a branca científica autònoma."
+    }
+  ]
+},
+{
+  "date": "2026-04-14",
+  "items": [
+    {
+      "type": "person",
+      "category": "matematiques",
+      "title": "Naixement de Julie Payette",
+      "year": 1963,
+      "description": "Naix Julie Payette, enginyera i astronauta que combina formació matemàtica i participació directa en missions espacials."
+    },
+    {
+      "type": "mission",
+      "category": "espai",
+      "title": "Llançament de la missió STS-1 (Columbia)",
+      "year": 1981,
+      "description": "S’inicia el programa del transbordador espacial amb el primer vol orbital reutilitzable."
+    },
+    {
+      "type": "discovery",
+      "category": "enginyeria",
+      "title": "Validació del concepte de nau reutilitzable",
+      "year": 1981,
+      "description": "El vol STS-1 demostra que una nau orbital pot ser reutilitzada de manera sistemàtica."
+    },
+    {
+      "type": "organization",
+      "category": "espai",
+      "title": "Canvi de paradigma en l’accés a l’espai",
+      "year": 1981,
+      "description": "El transbordador redefineix l’estratègia logística i científica de missions orbitals."
+    }
+  ]
+},
+{
+  "date": "2026-04-15",
+  "items": [
+    {
+      "type": "person",
+      "category": "astronomia",
+      "title": "Naixement de Margaret Geller",
+      "year": 1947,
+      "description": "Naix Margaret Geller, astrònoma que va revelar l’estructura a gran escala de l’Univers mitjançant mapes de galàxies."
+    },
+    {
+      "type": "mission",
+      "category": "espai",
+      "title": "Llançament del telescopi espacial Hubble",
+      "year": 1990,
+      "description": "Es llança el Hubble, que transformarà profundament l’astronomia observacional."
+    },
+    {
+      "type": "discovery",
+      "category": "cosmologia",
+      "title": "Observació detallada de galàxies llunyanes",
+      "year": 1995,
+      "description": "Les primeres imatges profundes del Hubble revelen l’evolució de galàxies al llarg del temps còsmic."
+    },
+    {
+      "type": "organization",
+      "category": "astronomia",
+      "title": "Consolidació de l’astronomia espacial d’alta resolució",
+      "year": 1990,
+      "description": "El Hubble estableix un nou estàndard per a telescopis orbitals científics."
+    }
+  ]
+},
+{
+  "date": "2026-04-16",
+  "items": [
+    {
+      "type": "person",
+      "category": "quimica",
+      "title": "Naixement de Ellen Swallow Richards",
+      "year": 1842,
+      "description": "Naix Ellen Swallow Richards, química pionera en l’anàlisi ambiental i la química aplicada a la salut pública."
+    },
+    {
+      "type": "mission",
+      "category": "espai",
+      "title": "Llançament de la sonda Apollo 16 cap a la Lluna",
+      "year": 1972,
+      "description": "La missió Apollo 16 entra en trajectòria lunar per explorar regions geològicament antigues."
+    },
+    {
+      "type": "discovery",
+      "category": "medi_ambient",
+      "title": "Aplicació sistemàtica de l’anàlisi química a l’aigua potable",
+      "year": 1880,
+      "description": "Els treballs de Richards estableixen estàndards científics per garantir la qualitat de l’aigua."
+    },
+    {
+      "type": "organization",
+      "category": "salut",
+      "title": "Integració de la química en polítiques de salut pública",
+      "year": 1890,
+      "description": "La química analítica esdevé una eina clau per a la prevenció sanitària."
+    }
+  ]
+},
+{
+  "date": "2026-04-17",
+  "items": [
+    {
+      "type": "person",
+      "category": "astronomia",
+      "title": "Naixement de Helen Sawyer Hogg",
+      "year": 1905,
+      "description": "Naix Helen Sawyer Hogg, astrònoma que va estudiar cúmuls globulars i l’evolució estel·lar."
+    },
+    {
+      "type": "mission",
+      "category": "espai",
+      "title": "Llançament de DMSP Block 5D",
+      "year": 1982,
+      "description": "Satèl·lits meteorològics que milloren el seguiment global del clima des de l’espai."
+    },
+    {
+      "type": "discovery",
+      "category": "astronomia",
+      "title": "Relació entre cúmuls globulars i estructura galàctica",
+      "year": 1950,
+      "description": "L’estudi sistemàtic de cúmuls globulars aporta informació clau sobre la formació de galàxies."
+    },
+    {
+      "type": "organization",
+      "category": "clima",
+      "title": "Consolidació de l’observació climàtica orbital",
+      "year": 1980,
+      "description": "Els satèl·lits permeten una visió global i contínua del sistema climàtic terrestre."
+    }
+  ]
+},
+{
+  "date": "2026-04-18",
+  "items": [
+    {
+      "type": "person",
+      "category": "astronomia",
+      "title": "Naixement de Vera Cooper Rubin",
+      "year": 1928,
+      "description": "Naix Vera Rubin, astrònoma que va aportar proves observacionals decisives de la matèria fosca."
+    },
+    {
+      "type": "mission",
+      "category": "espai",
+      "title": "Llançament del telescopi espacial GALEX",
+      "year": 2003,
+      "description": "GALEX inicia l’estudi ultraviolat de la formació estel·lar a escala galàctica."
+    },
+    {
+      "type": "discovery",
+      "category": "astronomia",
+      "title": "Mapatge de regions de formació estel·lar en ultraviolat",
+      "year": 2005,
+      "description": "Les dades de GALEX permeten quantificar taxes de formació estel·lar en galàxies properes."
+    },
+    {
+      "type": "organization",
+      "category": "astronomia",
+      "title": "Integració de l’ultraviolat en estudis galàctics",
+      "year": 2004,
+      "description": "L’astronomia UV es consolida com a eina clau per estudiar estrelles joves."
+    }
+  ]
+},
+{
+  "date": "2026-04-19",
+  "items": [
+    {
+      "type": "person",
+      "category": "biologia",
+      "title": "Naixement de Marie Maynard Daly",
+      "year": 1921,
+      "description": "Naix Marie Maynard Daly, bioquímica que va demostrar la relació entre colesterol i malaltia cardiovascular."
+    },
+    {
+      "type": "mission",
+      "category": "espai",
+      "title": "Llançament de la sonda Dawn",
+      "year": 2007,
+      "description": "Dawn inicia el seu viatge per estudiar Vesta i Ceres, dos cossos clau del cinturó d’asteroides."
+    },
+    {
+      "type": "discovery",
+      "category": "astrogeologia",
+      "title": "Diferenciació interna de cossos del cinturó d’asteroides",
+      "year": 2011,
+      "description": "Les dades de Dawn revelen processos interns complexos en petits cossos planetaris."
+    },
+    {
+      "type": "organization",
+      "category": "espai",
+      "title": "Consolidació de missions de propulsió iònica",
+      "year": 2007,
+      "description": "L’èxit de Dawn valida la propulsió iònica per a missions científiques de llarga durada."
+    }
+  ]
+},
+{
+  "date": "2026-04-20",
+  "items": [
+    {
+      "type": "person",
+      "category": "astronomia",
+      "title": "Naixement de Annie Jump Cannon",
+      "year": 1863,
+      "description": "Naix Annie Jump Cannon, astrònoma que va crear el sistema de classificació espectral estel·lar encara vigent."
+    },
+    {
+      "type": "mission",
+      "category": "espai",
+      "title": "Llançament de Chang’e 3",
+      "year": 2013,
+      "description": "Chang’e 3 inicia el retorn xinès a la superfície lunar amb instruments científics operatius."
+    },
+    {
+      "type": "discovery",
+      "category": "astronomia",
+      "title": "Mesures directes de radiació ultraviolada lunar",
+      "year": 2014,
+      "description": "Els instruments de Chang’e 3 aporten dades in situ sobre l’entorn radiatiu lunar."
+    },
+    {
+      "type": "organization",
+      "category": "espai",
+      "title": "Consolidació del programa lunar xinès",
+      "year": 2013,
+      "description": "Chang’e 3 marca un punt d’inflexió en l’exploració lunar robòtica contemporània."
+    }
+  ]
+},
+{
+  "date": "2026-04-21",
+  "items": [
+    {
+      "type": "person",
+      "category": "astronomia",
+      "title": "Naixement de Margaret Burbidge",
+      "year": 1919,
+      "description": "Naix Margaret Burbidge, astrònoma clau en l’estudi de la nucleosíntesi estel·lar i defensora activa de la igualtat de gènere en astronomia."
+    },
+    {
+      "type": "mission",
+      "category": "espai",
+      "title": "Llançament de la missió Surveyor 3",
+      "year": 1967,
+      "description": "Surveyor 3 s’envia a la Lluna per estudiar la consistència del sòl lunar abans de les missions tripulades."
+    },
+    {
+      "type": "discovery",
+      "category": "geologia",
+      "title": "Confirmació de la capacitat de càrrega del regol lunar",
+      "year": 1967,
+      "description": "Les dades de Surveyor confirmen que el sòl lunar pot suportar l’aterratge de naus tripulades."
+    },
+    {
+      "type": "organization",
+      "category": "espai",
+      "title": "Integració de dades robòtiques en la planificació lunar",
+      "year": 1968,
+      "description": "Les missions Surveyor esdevenen essencials per reduir riscos en el programa Apollo."
+    }
+  ]
+},
+{
+  "date": "2026-04-22",
+  "items": [
+    {
+      "type": "person",
+      "category": "biologia",
+      "title": "Naixement de Rachel Carson",
+      "year": 1907,
+      "description": "Naix Rachel Carson, biòloga que va demostrar amb dades l’impacte ambiental dels pesticides i va transformar la política ambiental."
+    },
+    {
+      "type": "mission",
+      "category": "espai",
+      "title": "Llançament de Landsat 1",
+      "year": 1972,
+      "description": "Landsat 1 inicia l’observació sistemàtica de la Terra des de l’espai amb finalitats científiques i ambientals."
+    },
+    {
+      "type": "discovery",
+      "category": "medi_ambient",
+      "title": "Aplicació de dades orbitals al seguiment del medi ambient",
+      "year": 1972,
+      "description": "Les primeres dades Landsat permeten quantificar canvis en vegetació, sòl i aigües continentals."
+    },
+    {
+      "type": "organization",
+      "category": "clima",
+      "title": "Naixement de l’observació ambiental per satèl·lit",
+      "year": 1972,
+      "description": "L’ús continu de satèl·lits estableix una nova base científica per a la gestió ambiental global."
+    }
+  ]
+},
+{
+  "date": "2026-04-23",
+  "items": [
+    {
+      "type": "person",
+      "category": "fisica",
+      "title": "Naixement de Max Planck",
+      "year": 1858,
+      "description": "Naix Max Planck, el físic que va introduir la quantització de l’energia i va iniciar la física quàntica."
+    },
+    {
+      "type": "mission",
+      "category": "espai",
+      "title": "Llançament de la sonda Soyuz 1",
+      "year": 1967,
+      "description": "Soyuz 1 s’enlaira en una missió experimental que posa de manifest els riscos del vol espacial tripulat."
+    },
+    {
+      "type": "discovery",
+      "category": "enginyeria",
+      "title": "Identificació de fallades crítiques en sistemes orbitals",
+      "year": 1967,
+      "description": "L’anàlisi de Soyuz 1 impulsa millores profundes en disseny, proves i seguretat de naus espacials."
+    },
+    {
+      "type": "organization",
+      "category": "espai",
+      "title": "Revisió integral dels programes tripulats soviètics",
+      "year": 1968,
+      "description": "Les lliçons de Soyuz 1 condueixen a una reformulació dels protocols de vol tripulat."
+    }
+  ]
+},
+{
+  "date": "2026-04-24",
+  "items": [
+    {
+      "type": "person",
+      "category": "astronomia",
+      "title": "Naixement de Jocelyn Bell Burnell",
+      "year": 1943,
+      "description": "Naix Jocelyn Bell Burnell, astrònoma que va descobrir els púlsars mentre analitzava dades radioastronòmiques."
+    },
+    {
+      "type": "mission",
+      "category": "espai",
+      "title": "Llançament del telescopi espacial Hubble (STS-31)",
+      "year": 1990,
+      "description": "El Hubble és posat en òrbita, iniciant una nova era d’astronomia d’alta resolució fora de l’atmosfera."
+    },
+    {
+      "type": "discovery",
+      "category": "astrofisica",
+      "title": "Identificació i estudi sistemàtic de púlsars",
+      "year": 1968,
+      "description": "Els púlsars esdevenen laboratoris naturals per estudiar matèria extrema i relativitat."
+    },
+    {
+      "type": "organization",
+      "category": "astronomia",
+      "title": "Consolidació de l’astronomia espacial observacional",
+      "year": 1990,
+      "description": "El Hubble estableix un model de telescopi orbital de servei prolongat."
+    }
+  ]
+},
+{
+  "date": "2026-04-25",
+  "items": [
+    {
+      "type": "person",
+      "category": "bioquimica",
+      "title": "Naixement de Gertrude Elion",
+      "year": 1918,
+      "description": "Naix Gertrude Elion, bioquímica que va revolucionar el disseny racional de fàrmacs."
+    },
+    {
+      "type": "mission",
+      "category": "espai",
+      "title": "Llançament de la missió STS-30 amb Magellan",
+      "year": 1989,
+      "description": "El transbordador Discovery envia la sonda Magellan cap a Venus per cartografiar-ne la superfície amb radar."
+    },
+    {
+      "type": "discovery",
+      "category": "planetologia",
+      "title": "Revelació del relleu global de Venus mitjançant radar",
+      "year": 1990,
+      "description": "Les dades de Magellan mostren una geologia complexa amagada sota els núvols venusins."
+    },
+    {
+      "type": "organization",
+      "category": "espai",
+      "title": "Consolidació del radar com a eina planetària",
+      "year": 1990,
+      "description": "El radar orbital esdevé essencial per estudiar planetes amb atmosferes opaques."
+    }
+  ]
+},
+{
+  "date": "2026-04-26",
+  "items": [
+    {
+      "type": "person",
+      "category": "astronomia",
+      "title": "Naixement de Maarten Schmidt",
+      "year": 1929,
+      "description": "Naix Maarten Schmidt, astrònom que va interpretar correctament el desplaçament al roig extrem dels quàsars."
+    },
+    {
+      "type": "mission",
+      "category": "espai",
+      "title": "Llançament de la sonda Zond 1",
+      "year": 1964,
+      "description": "Zond 1 inicia una de les primeres missions soviètiques d’exploració interplanetària cap a Venus."
+    },
+    {
+      "type": "discovery",
+      "category": "cosmologia",
+      "title": "Identificació dels quàsars com a nuclis galàctics actius",
+      "year": 1963,
+      "description": "La interpretació correcta dels quàsars revela l’existència de fonts extremadament energètiques a gran distància."
+    },
+    {
+      "type": "organization",
+      "category": "astronomia",
+      "title": "Integració de l’astrofísica extragalàctica moderna",
+      "year": 1965,
+      "description": "Els quàsars impulsen nous models de galàxies i forats negres supermassius."
+    }
+  ]
+},
+{
+  "date": "2026-04-27",
+  "items": [
+    {
+      "type": "person",
+      "category": "matematiques",
+      "title": "Naixement de Mary Cartwright",
+      "year": 1900,
+      "description": "Naix Mary Cartwright, matemàtica pionera en sistemes no lineals i teoria del caos."
+    },
+    {
+      "type": "mission",
+      "category": "espai",
+      "title": "Llançament de la sonda Psyche",
+      "year": 2023,
+      "description": "La missió Psyche s’envia a estudiar un asteroide metàl·lic per comprendre nuclis planetaris."
+    },
+    {
+      "type": "discovery",
+      "category": "astrofisica",
+      "title": "Aplicació de dinàmica no lineal a sistemes astronòmics",
+      "year": 1950,
+      "description": "Els sistemes no lineals expliquen comportaments complexos en òrbites i estrelles variables."
+    },
+    {
+      "type": "organization",
+      "category": "espai",
+      "title": "Expansió de missions d’exploració d’asteroides",
+      "year": 2020,
+      "description": "L’estudi directe d’asteroides esdevé clau per entendre la formació planetària."
+    }
+  ]
+},
+{
+  "date": "2026-04-28",
+  "items": [
+    {
+      "type": "person",
+      "category": "fisica",
+      "title": "Naixement de Marie-Georges Édouard Guillaume",
+      "year": 1868,
+      "description": "Naix Édouard Guillaume, físic que va desenvolupar aliatges d’alta estabilitat utilitzats en instrumentació científica."
+    },
+    {
+      "type": "mission",
+      "category": "espai",
+      "title": "Llançament del satèl·lit Explorer 23",
+      "year": 1964,
+      "description": "Explorer 23 estudia el camp magnètic terrestre i les partícules carregades de l’espai proper."
+    },
+    {
+      "type": "discovery",
+      "category": "geofisica",
+      "title": "Millora del coneixement de la magnetosfera terrestre",
+      "year": 1965,
+      "description": "Les dades orbitals permeten comprendre millor la interacció Sol-Terra."
+    },
+    {
+      "type": "organization",
+      "category": "espai",
+      "title": "Consolidació de la física espacial com a disciplina",
+      "year": 1965,
+      "description": "Les missions Explorer estableixen la base de la recerca moderna en entorns espacials."
+    }
+  ]
+},
+{
+  "date": "2026-04-29",
+  "items": [
+    {
+      "type": "person",
+      "category": "biologia",
+      "title": "Naixement de Rita Levi-Montalcini",
+      "year": 1909,
+      "description": "Naix Rita Levi-Montalcini, neurocientífica que va descobrir el factor de creixement nerviós."
+    },
+    {
+      "type": "mission",
+      "category": "espai",
+      "title": "Llançament de la sonda Cosmos 186",
+      "year": 1967,
+      "description": "Cosmos 186 prova tecnologies d’acoblament automàtic essencials per a estacions orbitals."
+    },
+    {
+      "type": "discovery",
+      "category": "neurobiologia",
+      "title": "Identificació del paper dels factors de creixement neuronal",
+      "year": 1952,
+      "description": "El descobriment del NGF transforma la comprensió del desenvolupament del sistema nerviós."
+    },
+    {
+      "type": "organization",
+      "category": "espai",
+      "title": "Desenvolupament de tecnologia d’acoblament orbital",
+      "year": 1967,
+      "description": "Els sistemes automàtics d’acoblament fan possible estacions espacials habitades."
+    }
+  ]
+},
+{
+  "date": "2026-04-30",
+  "items": [
+    {
+      "type": "person",
+      "category": "astronomia",
+      "title": "Naixement de Cecilia Payne-Gaposchkin",
+      "year": 1900,
+      "description": "Naix Cecilia Payne-Gaposchkin, astrònoma que va demostrar que les estrelles estan formades principalment d’hidrogen i heli."
+    },
+    {
+      "type": "mission",
+      "category": "espai",
+      "title": "Llançament de la sonda Rosetta",
+      "year": 2004,
+      "description": "Rosetta s’enlaira per estudiar de prop un cometa i el material primitiu del sistema solar."
+    },
+    {
+      "type": "discovery",
+      "category": "astroquimica",
+      "title": "Anàlisi in situ de la composició cometària",
+      "year": 2014,
+      "description": "Les dades de Rosetta revelen la complexitat química dels cometes i el seu paper en l’origen del sistema solar."
+    },
+    {
+      "type": "organization",
+      "category": "espai",
+      "title": "Consolidació de missions de llarga durada",
+      "year": 2004,
+      "description": "Rosetta demostra la viabilitat científica de missions amb dècades de planificació."
+    }
+  ]
+}
 ]
+

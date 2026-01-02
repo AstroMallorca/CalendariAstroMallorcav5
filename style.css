@@ -451,3 +451,37 @@ body.nocturn .btn-nav-mes{
 .dia-hyear{
   font-weight: 900;
 }
+/* ===== MODE NOCTURN: CARDS ===== */
+
+body.nocturn .dia-card {
+  background: #000;
+  border: 2px solid #ff3b3b;
+  color: #ff3b3b;
+}
+
+/* Línies internes (files Sol, Lluna, etc.) */
+body.nocturn .dia-row {
+  border-bottom: 1px solid #ff3b3b;
+}
+
+/* Última fila sense línia extra */
+body.nocturn .dia-row:last-child {
+  border-bottom: none;
+}
+
+/* Títols dins els cards */
+body.nocturn .dia-card-title,
+body.nocturn .dia-section-title {
+  color: #ff3b3b;
+}
+
+/* Text secundari (hores, "obre per veure detalls", etc.) */
+body.nocturn .dia-row-sub {
+  color: #ff6b6b;
+}
+
+/* Llistes d’activitats i històriques */
+body.nocturn .dia-list li,
+body.nocturn .dia-hitem {
+  color: #ff6b6b;
+}

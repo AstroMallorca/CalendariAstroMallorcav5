@@ -847,48 +847,15 @@ async function obreDia(iso) {
   const actHtml = act.length
     ? `<h3>Activitats AstroMallorca</h3><ul>${act.map(a => `<li><b>${a.titol}</b>${a.lloc ? " — " + a.lloc : ""}${a.url ? ` — <a href="${a.url}" target="_blank">Enllaç</a>` : ""}</li>`).join("")}</ul>`
     : `<h3>Activitats AstroMallorca</h3><p>Cap activitat.</p>`;
-  // === Efemèrides històriques (del teu JSON local) ===
-  const [yStr, mStr] = iso.split("-");
-  const y = Number(yStr);
-  const m1 = Number(mStr);
-  const monthData = await loadHistoricMonth(y, m1);
-  const rawHist = pickHistoricForISO(monthData, iso);
-  const histItems = renderHistoricItems(rawHist);
-const title = it.title || it.titol || it.nom || "";
-const desc  = it.description || it.descripcio || it.descripció || it.text || it.texto || "";
+// === Efemèrides històriques (del teu JSON/CSV anual) ===
+const [yStr, mStr] = iso.split("-");
+const y = Number(yStr);
+const m1 = Number(mStr);
 
-// (opcional) category/type al final, en petit
-const meta = (it.category || it.type)
-  ? ` <span style="opacity:.7;font-size:.9em">(${[it.category,it.type].filter(Boolean).join(" · ")})</span>`
-  : "";
+const monthData = await loadHistoricMonth(y, m1);
+const rawHist = pickHistoricForISO(monthData, iso);
+const histItems = renderHistoricItems(rawHist);
 
-// 1) Any: primer provam camps; si no hi són, l'extraiem del text "(born 1618)" o "(died 1637)"
-let yv = it.year ?? it.any;
-if (!yv && desc){
-  const m = desc.match(/\((?:born|died)\s+(\d{3,4})\)/i);
-  if (m) yv = m[1];
-}
-const yearPrefix = yv ? `<b>${yv}</b>: ` : "";
-
-// 2) Nom en negreta: agafam el que hi ha abans de la primera coma
-let line = "";
-if (desc){
-  const parts = desc.split(",");
-  const name = (parts.shift() || "").trim();
-  const rest = parts.length ? ", " + parts.join(",").trim() : "";
-
-  // Si hi ha title (format antic), el respectam
-  if (title){
-    line = `${yearPrefix}<b>${title}</b>${desc ? `: ${desc}` : ""}${meta}`;
-  } else {
-    line = `${yearPrefix}<b>${name}</b>${rest}${meta}`;
-  }
-}
-
-return `<li>${line}</li>`;
-
-    }).join("")}</ul>`
-  : `<h3>Efemèrides històriques</h3><p>Cap efemèride trobada.</p>`;
     // Sol i Lluna: sortida i posta (hora local dispositiu)
   const sol = getRiseSet("Sun", iso, APP_OBSERVER);
   const lluna = getRiseSet("Moon", iso, APP_OBSERVER);

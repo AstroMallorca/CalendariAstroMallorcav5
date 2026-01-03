@@ -501,3 +501,23 @@ body.nocturn .dia-hitem {
   margin-top: 12px;
   opacity: .95;
 }
+.dia-header-nav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.dia-nav{
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+}
+
+.dia-nav:disabled{
+  opacity: 0.3;
+  cursor: default;
+}

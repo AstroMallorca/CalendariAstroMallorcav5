@@ -145,7 +145,7 @@ body{
 }
 /* Dies del mes anterior/següent (mateix fons, text gris clar) */
 .dia.altre-mes{
-  background: #f1f1f1;              /* igual que .dia */
+  background: #fff;              /* igual que .dia */
 }
 
 .dia.altre-mes .num{

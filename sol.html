@@ -4,19 +4,270 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Sol</title>
-</head>
-<body style="font-family:system-ui;padding:16px">
-  <a href="#" id="back">← Tornar</a>
-  <h1>El Sol avui</h1>
-  <p>Data: <span id="d"></span></p>
-  <script>
-  const p = new URLSearchParams(location.search);
-  document.getElementById("d").textContent = p.get("date") || "";
 
-  document.getElementById("back").addEventListener("click", (e) => {
-    e.preventDefault();
-    window.history.back();
-  });
-</script>
+  <style>
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+      background:#000;
+      color:#fff;
+      padding:16px;
+    }
+    a{ color:#fff; text-decoration:none; opacity:.9; }
+    a:active{ opacity:1; }
+
+    .wrap{ max-width:520px; margin:0 auto; }
+    .top{
+      display:flex;
+      align-items:flex-start;
+      gap:14px;
+      margin-top: 8px;
+    }
+    .sun{
+      font-size:42px;
+      line-height:1;
+      margin-top: 2px;
+    }
+    .kpi{
+      white-space:pre-line;
+      font-size: 18px;
+      line-height:1.15;
+    }
+    .kpi b{ font-weight:800; }
+    .muted{ opacity:.75; font-size:14px; margin-top:6px; }
+
+    .list{
+      margin-top: 22px;
+      display:flex;
+      flex-direction:column;
+      gap: 18px;
+    }
+    .row{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      font-size: 22px;
+    }
+    .dot{
+      width:42px;
+      height:42px;
+      border-radius:999px;
+      flex:0 0 42px;
+    }
+    .label{ flex:1; }
+    .time{
+      font-weight:800;
+      letter-spacing:.3px;
+    }
+    .err{
+      margin-top:16px;
+      padding:10px 12px;
+      border:1px solid rgba(255,255,255,.2);
+      border-radius:12px;
+      opacity:.9;
+      font-size:14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <a href="#" id="back">← Tornar</a>
+
+    <div class="top">
+      <div class="sun">🌞</div>
+      <div class="kpi" id="kpi">Carregant…</div>
+    </div>
+    <div class="muted" id="meta"></div>
+
+    <div class="list" id="list"></div>
+    <div class="err" id="err" style="display:none"></div>
+  </div>
+
+  <!-- astronomy-engine (mateixa llibreria que ja tens a index.html) -->
+  <script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js"></script>
+
+  <script>
+    const p = new URLSearchParams(location.search);
+
+    const dateStr = p.get("date"); // "YYYY-MM-DD"
+    const lat  = Number(p.get("lat"));
+    const lon  = Number(p.get("lon"));
+    const elev = Number(p.get("elev"));
+
+    // Fallback (Palma aprox) si no arriba res
+    const observer = {
+      latitude:  Number.isFinite(lat) ? lat : 39.5696,
+      longitude: Number.isFinite(lon) ? lon : 2.6502,
+      elevation: Number.isFinite(elev) ? elev : 0
+    };
+
+    // Data base en hora local del dispositiu
+    function parseISODateLocal(iso){
+      if (!iso || !/^\d{4}-\d{2}-\d{2}$/.test(iso)) return new Date();
+      const [y,m,d] = iso.split("-").map(Number);
+      return new Date(y, m-1, d, 0, 0, 0);
+    }
+
+    const day0 = parseISODateLocal(dateStr);
+
+    document.getElementById("back").addEventListener("click", (e) => {
+      e.preventDefault();
+      window.history.back();
+    });
+
+    function fmtHM(date){
+      if (!date) return "--:--";
+      return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false });
+    }
+
+    function fmtDur(ms){
+      if (!Number.isFinite(ms) || ms < 0) return "—";
+      const totalMin = Math.round(ms / 60000);
+      const h = Math.floor(totalMin / 60);
+      const m = totalMin % 60;
+      return `${h}h ${String(m).padStart(2,"0")}m`;
+    }
+
+    function tryRiseSet(direction, startDate){
+      try{
+        const evt = Astronomy.SearchRiseSet(Astronomy.Body.Sun, observer, direction, startDate, 2);
+        // evt.time.date és Date
+        return evt?.time?.date ? new Date(evt.time.date.getTime()) : null;
+      }catch(e){
+        return null;
+      }
+    }
+
+    function tryAltitudeCrossing(altDeg, direction, startDate){
+      try{
+        const evt = Astronomy.SearchAltitude(Astronomy.Body.Sun, observer, direction, startDate, 2, altDeg);
+        return evt?.time?.date ? new Date(evt.time.date.getTime()) : null;
+      }catch(e){
+        return null;
+      }
+    }
+
+    function sunAltitudeAt(date){
+      const t = Astronomy.MakeTime(date);
+      const eq = Astronomy.Equator(Astronomy.Body.Sun, t, observer, true, true);
+      const hz = Astronomy.Horizon(t, observer, eq.ra, eq.dec, "normal");
+      return hz.altitude;
+    }
+
+    function earthSunDistanceKm(date){
+      const t = Astronomy.MakeTime(date);
+      const v = Astronomy.GeoVector(Astronomy.Body.Sun, t, true);
+      const rAU = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
+      const AU_KM = (typeof Astronomy.AU_KM === "number") ? Astronomy.AU_KM : 149597870.7;
+      return rAU * AU_KM;
+    }
+
+    function julianDay(date){
+      const t = Astronomy.MakeTime(date);
+      // A astronomy-engine, t.ut és el dia julià (normalment amb decimals).
+      return t.ut;
+    }
+
+    // ===== CÀLCULS PER AL DIA =====
+    // Matí: cerca des de 00:00
+    const startMorning = new Date(day0.getFullYear(), day0.getMonth(), day0.getDate(), 0, 0, 0);
+    // Vespre: cerca des de 12:00
+    const startEvening = new Date(day0.getFullYear(), day0.getMonth(), day0.getDate(), 12, 0, 0);
+
+    const astroDawn   = tryAltitudeCrossing(-18, +1, startMorning);
+    const nauticDawn  = tryAltitudeCrossing(-12, +1, startMorning);
+
+    // Definicions (coherents amb la captura):
+    // Hora blava = Sol a -6° (inici crepuscle civil)
+    // Hora daurada = Sol a -4° (límit “golden” que surt a la teva llista)
+    const blueAM      = tryAltitudeCrossing(-6, +1, startMorning);
+    const goldenAM    = tryAltitudeCrossing(-4, +1, startMorning);
+
+    const sunrise     = tryRiseSet(+1, startMorning);
+
+    // “Migdia solar” = trànsit del Sol
+    let solarNoon = null;
+    let maxAlt = null;
+    try{
+      const tr = Astronomy.SearchTransit(Astronomy.Body.Sun, observer, startMorning, 2);
+      solarNoon = tr?.time?.date ? new Date(tr.time.date.getTime()) : null;
+      if (solarNoon) maxAlt = sunAltitudeAt(solarNoon);
+    }catch(e){}
+
+    const goldenPM    = tryAltitudeCrossing(-4, -1, startEvening);
+    const sunset      = tryRiseSet(-1, startEvening);
+    const bluePM      = tryAltitudeCrossing(-6, -1, startEvening);
+
+    const nauticDusk  = tryAltitudeCrossing(-12, -1, startEvening);
+    const astroDusk   = tryAltitudeCrossing(-18, -1, startEvening);
+
+    // Hores de llum
+    const daylightMs = (sunrise && sunset) ? (sunset.getTime() - sunrise.getTime()) : NaN;
+
+    // Distància
+    const distKm = earthSunDistanceKm(solarNoon || startMorning);
+    const distMillionKm = distKm / 1e6;
+
+    // Dia Julià
+    const jd = julianDay(startMorning);
+
+    // ===== PINTAR =====
+    const kpiEl = document.getElementById("kpi");
+    kpiEl.innerHTML =
+      `<b>Dia julià:</b> ${jd.toFixed(5)}\n` +
+      `<b>Hores de llum:</b> ${fmtDur(daylightMs)}\n` +
+      `<b>Elevació màxima:</b> ${Number.isFinite(maxAlt) ? maxAlt.toFixed(1) + "°" : "—"}\n` +
+      `<b>Distància del sol:</b> ${Number.isFinite(distMillionKm) ? distMillionKm.toFixed(3) + " M km" : "—"}`;
+
+    document.getElementById("meta").textContent =
+      `${dateStr || ""} · lat ${observer.latitude.toFixed(4)}, lon ${observer.longitude.toFixed(4)} · elev ${Math.round(observer.elevation)} m`;
+
+    const list = document.getElementById("list");
+
+    const items = [
+      { label: "Crepuscul astronòmic", time: astroDawn,  color: "#0b1d63" },
+      { label: "Crepuscul nàutic",     time: nauticDawn, color: "#1533ff" },
+      { label: "Hora Blava",           time: blueAM,     color: "#00c9ff" },
+      { label: "Hora dorada",          time: goldenAM,   color: "#ffb13a" },
+      { label: "Sortida",              time: sunrise,    color: "#ffff4a" },
+      { label: "Migdia solar",         time: solarNoon,  color: "#f2ffb0" },
+      { label: "Hora dorada",          time: goldenPM,   color: "#ffb13a" },
+      { label: "Posta de sol",         time: sunset,     color: "#c67816" },
+      { label: "Hora Blava",           time: bluePM,     color: "#00c9ff" },
+      { label: "Crepuscul nàutic",     time: nauticDusk, color: "#1533ff" },
+      { label: "Crepuscul astronòmic", time: astroDusk,  color: "#0b1d63" },
+    ];
+
+    items.forEach(it => {
+      const row = document.createElement("div");
+      row.className = "row";
+
+      const dot = document.createElement("div");
+      dot.className = "dot";
+      dot.style.background = it.color;
+
+      const lab = document.createElement("div");
+      lab.className = "label";
+      lab.textContent = it.label + ":";
+
+      const tm = document.createElement("div");
+      tm.className = "time";
+      tm.textContent = fmtHM(it.time);
+
+      row.appendChild(dot);
+      row.appendChild(lab);
+      row.appendChild(tm);
+      list.appendChild(row);
+    });
+
+    // Avís si manca algun esdeveniment (polar, errors, etc.)
+    const missing = items.filter(x => !x.time).map(x => x.label);
+    if (missing.length){
+      const err = document.getElementById("err");
+      err.style.display = "block";
+      err.textContent = "Algunes hores no s'han pogut calcular (pot passar a latituds extremes o segons definició). Falta: " + missing.join(", ");
+    }
+  </script>
 </body>
 </html>

@@ -377,15 +377,20 @@ function getRiseSet(bodyName, iso, observer){
     const lat = Number(observer?.latitude ?? DEFAULT_OBSERVER.latitude);
     const lon = Number(observer?.longitude ?? DEFAULT_OBSERVER.longitude);
     const h   = Number(observer?.elevation ?? observer?.height ?? 0);
-    const obs = new Astronomy.Observer(lat, lon, isFinite(h) ? h : 0);
+    const obs = new Astronomy.Observer(lat, lon, Number.isFinite(h) ? h : 0);
 
     // 4) Rise / Set
     const t0 = Astronomy.MakeTime(start);
-    const riseEvt = Astronomy.SearchRiseSet(body, obs, +1, t0, 1, 0);
-    const setEvt  = Astronomy.SearchRiseSet(body, obs, -1, t0, 1, 0);
 
-    const rise = riseEvt?.time?.date ? new Date(riseEvt.time.date.getTime()) : null;
-    const set  = setEvt?.time?.date  ? new Date(setEvt.time.date.getTime())  : null;
+    const riseRes = Astronomy.SearchRiseSet(body, obs, +1, t0, 1, 0);
+    const setRes  = Astronomy.SearchRiseSet(body, obs, -1, t0, 1, 0);
+
+    // ✅ Accepta AstroTime o AstroEvent
+    const riseTime = (riseRes && riseRes.date) ? riseRes : (riseRes && riseRes.time ? riseRes.time : null);
+    const setTime  = (setRes  && setRes.date)  ? setRes  : (setRes  && setRes.time  ? setRes.time  : null);
+
+    const rise = (riseTime && riseTime.date) ? new Date(riseTime.date.getTime()) : null;
+    const set  = (setTime  && setTime.date)  ? new Date(setTime.date.getTime())  : null;
 
     return { rise, set };
   }catch(e){

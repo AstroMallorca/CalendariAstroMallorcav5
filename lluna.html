@@ -135,16 +135,22 @@
       // Construcció SVG amb:
       // - anell perigeu (groc)
       // - anell apogeu (blau)
-      // - disc base (gris amb gradient)
-      // - màscara d'il·luminació (un "lent" clar) + ombra suau
+      // - disc fosc base
+      // - disc il·luminat (cercle desplaçat) retallat pel disc principal
 
       return `
 <svg viewBox="0 0 240 240" aria-label="Fase lunar" role="img">
   <defs>
-    <radialGradient id="gMoon" cx="35%" cy="35%" r="70%">
+    <radialGradient id="gMoonLight" cx="35%" cy="35%" r="70%">
       <stop offset="0%" stop-color="#f2f2f2"/>
       <stop offset="55%" stop-color="#cfcfcf"/>
       <stop offset="100%" stop-color="#9f9f9f"/>
+    </radialGradient>
+
+    <radialGradient id="gMoonDark" cx="35%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#6b6b6b"/>
+      <stop offset="60%" stop-color="#545454"/>
+      <stop offset="100%" stop-color="#3f3f3f"/>
     </radialGradient>
 
     <!-- Clip del disc actual (mida del dia) -->
@@ -152,15 +158,7 @@
       <circle cx="${cx}" cy="${cy}" r="${R}"></circle>
     </clipPath>
 
-    <!-- Màscara de llum: intersecció de disc principal amb disc auxiliar -->
-    <mask id="maskLight">
-      <rect x="0" y="0" width="240" height="240" fill="black"></rect>
-      <g clip-path="url(#clipDisc)">
-        <circle cx="${lightX}" cy="${cy}" r="${R}" fill="white"></circle>
-      </g>
-    </mask>
-
-    <!-- Ombra suau al costat fosc (una mica de profunditat) -->
+    <!-- Ombra suau extra (profunditat) -->
     <linearGradient id="gShade" x1="${waxing ? 1 : 0}" y1="0" x2="${waxing ? 0 : 1}" y2="0">
       <stop offset="0%" stop-color="rgba(0,0,0,0.35)"/>
       <stop offset="55%" stop-color="rgba(0,0,0,0.0)"/>
@@ -171,21 +169,20 @@
   <circle cx="${cx}" cy="${cy}" r="${R_perigeu}" fill="none" stroke="var(--perigeu)" stroke-width="2.5"></circle>
   <circle cx="${cx}" cy="${cy}" r="${R_apogeu}"  fill="none" stroke="var(--apogeu)"  stroke-width="2.5"></circle>
 
-  <!-- Disc base (gris) -->
-  <circle cx="${cx}" cy="${cy}" r="${R}" fill="url(#gMoon)"></circle>
+  <!-- 1) Disc FOSC (sempre) -->
+  <circle cx="${cx}" cy="${cy}" r="${R}" fill="url(#gMoonDark)"></circle>
 
-  <!-- Lluminós (mateix disc base però retallat per màscara) -->
-  <g mask="url(#maskLight)">
-    <circle cx="${cx}" cy="${cy}" r="${R}" fill="url(#gMoon)"></circle>
+  <!-- 2) Part IL·LUMINADA: cercle desplaçat retallat pel disc principal -->
+  <g clip-path="url(#clipDisc)">
+    <circle cx="${lightX}" cy="${cy}" r="${R}" fill="url(#gMoonLight)"></circle>
   </g>
 
-  <!-- Ombra suau -->
+  <!-- Ombra suau extra -->
   <circle cx="${cx}" cy="${cy}" r="${R}" fill="url(#gShade)" opacity="0.55" clip-path="url(#clipDisc)"></circle>
 
   <!-- Contorn fi del disc actual -->
   <circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="1"></circle>
 </svg>`;
-    }
 
     (function main(){
       const errEl = document.getElementById("err");

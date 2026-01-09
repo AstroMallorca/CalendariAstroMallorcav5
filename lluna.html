@@ -635,7 +635,7 @@ const metersAboveGround = 0;
 
 // ✅ Passam JD (número) en lloc de Date/AstroTime
 const startJD = toJulianUtc(startDate);
-
+console.log("startJD", startJD, "finite?", Number.isFinite(startJD));
 // 1) RISE
 const riseEv = Astronomy.SearchRiseSet(
   Astronomy.Body.Moon,

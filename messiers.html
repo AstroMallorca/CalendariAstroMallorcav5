@@ -289,21 +289,39 @@ async function main(){
     const winA = sunset ? sunset : startOfDayLocal(iso);
     const winB = endOfDayLocal(iso); // fins 23:59
 
-    const enriched = catalog.map(obj => {
-      const dayRS = approxRiseSetForDay(iso, obs, obj.ra_h, obj.dec_deg, minAlt, stepMin);
-      const ev = visibleMinutesInWindow(obs, obj.ra_h, obj.dec_deg, minAlt, stepMin, winA, winB);
+const enriched = catalog.map(obj => {
+  const ra = Number(obj.ra_h);
+  const dec = Number(obj.dec_deg);
 
-      return {
-        ...obj,
-        riseApprox: dayRS.rise,
-        setApprox: dayRS.set,
-        state: dayRS.state,
-        visEveningMin: ev.visMin,
-        firstEvening: ev.first,
-        lastEvening: ev.last,
-        sunset
-      };
-    });
+  // ✅ si falten dades, no petis: posa'l al final
+  if(!Number.isFinite(ra) || !Number.isFinite(dec)){
+    return {
+      ...obj,
+      riseApprox: null,
+      setApprox: null,
+      state: "nodata",
+      visEveningMin: -1,   // perquè quedi al final
+      firstEvening: null,
+      lastEvening: null,
+      sunset
+    };
+  }
+
+  const dayRS = approxRiseSetForDay(iso, obs, ra, dec, minAlt, stepMin);
+  const ev = visibleMinutesInWindow(obs, ra, dec, minAlt, stepMin, winA, winB);
+
+  return {
+    ...obj,
+    riseApprox: dayRS.rise,
+    setApprox: dayRS.set,
+    state: dayRS.state,
+    visEveningMin: ev.visMin,
+    firstEvening: ev.first,
+    lastEvening: ev.last,
+    sunset
+  };
+});
+
 
     // Ordena: més minuts visibles el vespre primer
     enriched.sort((a,b) => (b.visEveningMin - a.visEveningMin) || (String(a.id).localeCompare(String(b.id))));
@@ -351,6 +369,12 @@ async function main(){
       const rs3 = document.createElement("div");
       rs3.className = "muted";
       rs3.style.fontSize = "12px";
+      if(o.state === "nodata"){
+  rs3.textContent = "Sense coordenades (catàleg incomplet)";
+  rs3.classList.add("warn");
+}else if(o.state === "circumpolar"){
+  ...
+}
 
       if(o.state === "circumpolar"){
         rs3.textContent = "Circumpolar (sempre per damunt del llindar)";

@@ -971,6 +971,9 @@ if (info?.lluna_foscor?.color && !(esDiumenge || esFestiu)) {
 async function obreDia(iso) {
   const info = efemerides[iso] || {};
   const esp = efemeridesEspecials[iso] || [];
+  const espOrdenades = [...esp].sort(
+  (a, b) => (b.importancia ?? 0) - (a.importancia ?? 0)
+);
   const act = activitats[iso] || [];
   const obsQ = `&lat=${encodeURIComponent(APP_OBSERVER.latitude)}&lon=${encodeURIComponent(APP_OBSERVER.longitude)}&elev=${encodeURIComponent(APP_OBSERVER.elevation ?? 0)}`;
 
@@ -1003,7 +1006,7 @@ const histItems = renderHistoricItems(rawHist);
   const solTxt = `Sortida: ${formatHM(sol.rise)} · Posta: ${formatHM(sol.set)}`;
   const llunaTxt = `Sortida: ${formatHM(lluna.rise)} · Posta: ${formatHM(lluna.set)}`;
      const teActivitat = act && act.length;
-  const teEspecials = esp && esp.length;
+  const teEspecials = espOrdenades && espOrdenades.length;
   const teHistoric  = histItems && histItems.length;
 
   const activitatHtml = teActivitat
@@ -1019,9 +1022,8 @@ const especialsHtml = teEspecials
   ? `<div class="dia-card">
        <div class="dia-card-title">Efemèrides especials</div>
        <ul class="dia-list">
-         ${esp.map(e => `
+         ${espOrdenades.map(e => `
            <li>
-             ${e.codi ? `<img src="${e.codi}" class="esp-icon-inline" alt="" loading="lazy"> ` : ""}
              ${(e.titol || e.clau || "").trim()}
              ${e.hora ? ` — ${e.hora}` : ""}
            </li>
@@ -1029,6 +1031,7 @@ const especialsHtml = teEspecials
        </ul>
      </div>`
   : "";
+
 
   const historicHtml = teHistoric
     ? `<div class="dia-card">

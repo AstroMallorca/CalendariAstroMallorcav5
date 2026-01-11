@@ -495,7 +495,17 @@ function actualitzaTitolMes(isoYM){
 }
 
 // === CSV parser (quotes + commas) ===
+function detectDelimiter(text){
+  const firstLine = (text.split(/\r?\n/).find(l => l.trim()) || "");
+  const commas = (firstLine.match(/,/g) || []).length;
+  const semis  = (firstLine.match(/;/g) || []).length;
+  return semis > commas ? ";" : ",";
+}
+
+// === CSV parser (quotes + delimiter auto ,/;) ===
 function parseCSV(text) {
+  const delimiter = detectDelimiter(text);
+
   const rows = [];
   let row = [];
   let cur = "";
@@ -510,7 +520,7 @@ function parseCSV(text) {
     }
     if (c === '"') { inQuotes = !inQuotes; continue; }
 
-    if (c === "," && !inQuotes) { row.push(cur); cur = ""; continue; }
+    if (c === delimiter && !inQuotes) { row.push(cur); cur = ""; continue; }
 
     if ((c === "\n" || c === "\r") && !inQuotes) {
       if (cur.length || row.length) { row.push(cur); rows.push(row); }
@@ -523,6 +533,7 @@ function parseCSV(text) {
   if (cur.length || row.length) { row.push(cur); rows.push(row); }
   return rows;
 }
+
 
 // ✅ Millora: capçaleres normalitzades (evita espais/majúscules)
 function normalizeHeader(h) {
@@ -1224,11 +1235,9 @@ async function inicia() {
     const e = await loadJSON("data/efemerides2026.json");
 efemerides = e.dies || {};
 
-// ✅ Efemèrides (icones) des d'un CSV local
-const espRows = await loadCSVLocal(LOCAL_EFEMERIDES_CSV);
+// ✅ Efemèrides especials (icones) des de CSV LOCAL
+const espRows = await loadCSVLocal("data/efemerides_2026_data_unica_importancia.csv");
 efemeridesEspecials = buildEfemeridesEspecials(espRows);
-
-
 
     // sheets (fotos + efemèrides + festius)
   const [fotos, fest] = await Promise.all([

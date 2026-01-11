@@ -398,11 +398,11 @@ body.nocturn .btn-nav-mes{
 }
 
 .dia-card{
-  border: 3px solid #000;
+  background: rgba(0,0,0,0.03);        /* ✅ gris suau */
+  border: 1px solid rgba(0,0,0,0.18);  /* ✅ gris un poc més fort */
   border-radius: 18px;
   padding: 12px 14px;
   margin: 12px 0;
-  background: #fff;
 }
 
 .dia-card-title{
@@ -467,9 +467,9 @@ body.nocturn .btn-nav-mes{
 }
 /* ===== MODE NOCTURN: CARDS ===== */
 
-body.nocturn .dia-card {
-  background: #000;
-  border: 2px solid #ff3b3b;
+body.nocturn .dia-card{
+  background: rgba(255,59,59,0.06);
+  border: 1px solid rgba(255,59,59,0.35);
   color: #ff3b3b;
 }
 
@@ -539,11 +539,13 @@ body.nocturn .dia-hitem {
 .back-link{
   display:inline-block;
   margin: 4px 0 10px 0;
-  text-decoration:none;
-  color:#111;
+  text-decoration:none; /* ✅ sense subratllat */
+  color:#111;           /* ✅ negre */
   font-weight:600;
+  font-size: 20px;
 }
 .back-link:active{ transform: translateY(1px); }
+body.nocturn .back-link{ color:#ff3b3b; }
 
 .page-title{
   margin: 6px 0 6px 0;
@@ -562,7 +564,10 @@ body.nocturn .dia-hitem {
 }
 
 .foto-img{
-  width:100%;
+  width: 100%;
+  height: auto;
+  max-height: 52vh;     /* ✅ limita alçada (evita foto gegant) */
+  object-fit: contain;  /* ✅ no retalla */
   display:block;
   border-radius: 18px;
 }
@@ -577,3 +582,7 @@ body.nocturn .dia-hitem {
 /* mode nocturn per aquests elements */
 body.nocturn .back-link{ color:#ff3b3b; }
 body.nocturn .page-subtitle{ color: rgba(255,59,59,.75); }
+.foto-wrap{
+  max-width: 720px;
+  margin: 0 auto;
+}

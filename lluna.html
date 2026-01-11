@@ -248,6 +248,7 @@ function parseISODateAtMidnightLocal(iso){
 function buildUrlForDate(newISO){
   const q = new URLSearchParams(location.search);
   q.set("date", newISO);
+  if (!q.get("back")) q.set("back", "efemerides.html"); // o index.html
   return `${location.pathname}?${q.toString()}`;
 }
 
@@ -280,10 +281,36 @@ if (!dateStr){
   document.getElementById("d").textContent = todayISO;
 }
 
-    document.getElementById("back").addEventListener("click", (e) => {
-      e.preventDefault();
-      window.history.back();
-    });
+   function buildUrlForDateOnPage(page, newISO){
+  const q = new URLSearchParams(location.search);
+  q.set("date", newISO);
+  return `${page}?${q.toString()}`;
+}
+
+// on ha de tornar (tria un d’aquests)
+const BACK_PAGE = "index.html";   // <-- si la teva pàgina d’efemèrides té aquest nom
+// const BACK_PAGE = "index.html";     // <-- si vols tornar a la principal
+
+function currentISOFromQueryOrToday(){
+  const q = new URLSearchParams(location.search);
+  const iso = q.get("date");
+  if (iso && /^\d{4}-\d{2}-\d{2}$/.test(iso)) return iso;
+
+  const now = new Date();
+  const y = now.getFullYear();
+  const m = String(now.getMonth()+1).padStart(2,"0");
+  const d = String(now.getDate()).padStart(2,"0");
+  return `${y}-${m}-${d}`;
+}
+
+const backA = document.getElementById("back");
+backA.href = buildUrlForDateOnPage(BACK_PAGE, currentISOFromQueryOrToday());
+
+backA.addEventListener("click", (e) => {
+  e.preventDefault();
+  location.href = backA.href;   // NO history.back()
+});
+
 
     // ======= Localització =======
     function numParam(name, fallback){

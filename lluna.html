@@ -481,6 +481,83 @@ h1{
       const scan = findRiseSetScan(body, observer, start, 36, 5, 0);
       return { rise: scan.rise, set: scan.set };
     }
+// ======= SVG LLUNA (fase + mida) =======
+function renderMoonSVG(opts){
+  const {
+    R_perigeu = 108,
+    R_apogeu  = 96,
+    R_now     = 102,
+    illum = 0.5,
+    waxing = true
+  } = opts;
+
+  const cx = 120, cy = 120;
+  const R = R_now;
+
+  const cosPhi = (2 * clamp(illum, 0, 1)) - 1;
+  let rx = Math.abs(cosPhi) * R;
+  if (rx < 0.001) rx = 0.001;
+
+  const isGibbous = illum > 0.5;
+  const sweepLimb = waxing ? 1 : 0;
+
+  let sweepTerm;
+  if (!isGibbous) sweepTerm = waxing ? 0 : 1;
+  else            sweepTerm = waxing ? 1 : 0;
+
+  const almostNew  = illum < 0.01;
+  const almostFull = illum > 0.99;
+
+  const pathLit = `
+    M ${cx} ${cy - R}
+    A ${R} ${R} 0 0 ${sweepLimb} ${cx} ${cy + R}
+    A ${rx} ${R} 0 0 ${sweepTerm} ${cx} ${cy - R}
+    Z
+  `;
+
+  const IMG = "assets/moon/plena.png";
+
+  return `
+<svg viewBox="0 0 240 240" aria-label="Fase lunar" role="img">
+  <defs>
+    <clipPath id="clipDisc"><circle cx="${cx}" cy="${cy}" r="${R}"></circle></clipPath>
+
+    <mask id="maskShadow">
+      <rect x="0" y="0" width="240" height="240" fill="black"></rect>
+      <circle cx="${cx}" cy="${cy}" r="${R}" fill="white"></circle>
+      ${almostNew ? "" : `<path d="${pathLit}" fill="black"></path>`}
+    </mask>
+
+    <mask id="maskLit">
+      <rect x="0" y="0" width="240" height="240" fill="black"></rect>
+      ${
+        almostFull
+          ? `<circle cx="${cx}" cy="${cy}" r="${R}" fill="white"></circle>`
+          : (almostNew ? "" : `<path d="${pathLit}" fill="white"></path>`)
+      }
+    </mask>
+  </defs>
+
+  <circle cx="${cx}" cy="${cy}" r="${R_perigeu}" fill="none" stroke="var(--perigeuFixed)" stroke-width="2.5"></circle>
+  <circle cx="${cx}" cy="${cy}" r="${R_apogeu}"  fill="none" stroke="var(--apogeuFixed)"  stroke-width="2.5"></circle>
+
+  <g clip-path="url(#clipDisc)">
+    <image href="${IMG}" x="${cx-R}" y="${cy-R}" width="${2*R}" height="${2*R}"
+           preserveAspectRatio="xMidYMid slice" opacity="0.75"></image>
+  </g>
+
+  <g clip-path="url(#clipDisc)" mask="url(#maskLit)">
+    <image href="${IMG}" x="${cx-R}" y="${cy-R}" width="${2*R}" height="${2*R}"
+           preserveAspectRatio="xMidYMid slice" opacity="1"></image>
+  </g>
+
+  <g clip-path="url(#clipDisc)" mask="url(#maskShadow)">
+    <rect x="${cx-R}" y="${cy-R}" width="${2*R}" height="${2*R}" fill="rgba(0,0,0,0.65)"></rect>
+  </g>
+
+  <circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="1"></circle>
+</svg>`;
+}
 
     (async () => {
       const errEl = document.getElementById("err");

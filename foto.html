@@ -59,6 +59,37 @@ h1{
       border-radius: 18px;
       padding: 14px;
     }
+.author{
+  margin-top: 12px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.info-card{
+  margin-top: 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 12px 12px;
+}
+
+.tech-line{
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.lloc-line,
+.credits-line{
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.lloc-line b,
+.credits-line b{
+  font-weight: 700;
+}
 
     img{
       width:100%;
@@ -74,9 +105,16 @@ h1{
 <h1 id="pageTitle">Fotografia del mes</h1>
 <p class="sub" id="subtitle">—</p>
 
-  <div class="card">
-    <img id="photo" alt="Foto del mes">
+<div class="card">
+  <img id="photo" alt="Foto del mes">
+  <div id="author" class="author" style="display:none;"></div>
+
+  <div id="infoCard" class="info-card" style="display:none;">
+    <div id="techLine" class="tech-line"></div>
+    <div id="llocLine" class="lloc-line"></div>
+    <div id="creditsLine" class="credits-line"></div>
   </div>
+</div>
 
 <script>
   // Hereta mode nocturn de l'app
@@ -161,10 +199,75 @@ h1{
         rows.find(o => (o.any_mes||"").trim() === ym) ||
         rows.find(o => (o.any_mes||"").trim() === `${ym.slice(5,7)}-${ym.slice(0,4)}`);
 
-      document.getElementById("subtitle").textContent =
-        (f?.titol || "").trim() || "—";
+document.getElementById("subtitle").textContent =
+  (f?.titol || "").trim() || "—";
 
-      if (f?.imatge) document.getElementById("photo").src = f.imatge;
+if (f?.imatge) document.getElementById("photo").src = f.imatge;
+
+// === AUTOR (centrat sota la foto) ===
+const autor = (f?.autor || "").trim();
+const authorEl = document.getElementById("author");
+if (authorEl){
+  if (autor){
+    authorEl.textContent = autor;
+    authorEl.style.display = "block";
+  }else{
+    authorEl.style.display = "none";
+  }
+}
+
+// === REQUADRE DADES FOTO (només si hi ha dades) ===
+const clean = (v) => (v ?? "").toString().trim();
+
+const camera   = clean(f?.camera);
+const objectiu = clean(f?.objectiu);
+const exposicio= clean(f?.exposicio);
+const isoVal   = clean(f?.iso);
+const fVal     = clean(f?.f);
+
+const lloc  = clean(f?.lloc);
+const credits = clean(f?.credits ?? f?.credit);
+
+const tech = [];
+if (camera)   tech.push(`📷 ${camera}`);
+if (objectiu) tech.push(`🔭 ${objectiu}`);
+if (exposicio)tech.push(`⏱ ${exposicio}`);
+if (isoVal)   tech.push(`ISO ${isoVal}`);
+if (fVal)     tech.push(`f/${fVal}`);
+
+const hasInfoCard = tech.length || lloc || credits;
+
+const infoCard = document.getElementById("infoCard");
+const techLine = document.getElementById("techLine");
+const llocLine = document.getElementById("llocLine");
+const creditsLine = document.getElementById("creditsLine");
+
+if (infoCard){
+  if (hasInfoCard){
+    // línia tècnica
+    if (techLine){
+      techLine.innerHTML = tech.length ? tech.join(" · ") : "";
+      techLine.style.display = tech.length ? "block" : "none";
+    }
+
+    // lloc
+    if (llocLine){
+      llocLine.innerHTML = lloc ? `<b>Lloc:</b> ${lloc}` : "";
+      llocLine.style.display = lloc ? "block" : "none";
+    }
+
+    // crèdits
+    if (creditsLine){
+      creditsLine.innerHTML = credits ? `<b>Crèdits:</b> ${credits}` : "";
+      creditsLine.style.display = credits ? "block" : "none";
+    }
+
+    infoCard.style.display = "block";
+  }else{
+    infoCard.style.display = "none";
+  }
+}
+
     }catch(e){
       console.warn(e);
     }

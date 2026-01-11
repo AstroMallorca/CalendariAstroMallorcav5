@@ -812,61 +812,66 @@ function obreModalDetallFoto(f) {
   const credits = clean(f.credits ?? f.credit);
 
   const tech = [];
-  if (clean(f.camera))    tech.push(`📷 ${clean(f.camera)}`);
-  if (clean(f.objectiu))  tech.push(`🔭 ${clean(f.objectiu)}`);
-  if (clean(f.exposicio)) tech.push(`⏱ ${clean(f.exposicio)}`);
-  if (clean(f.iso))       tech.push(`ISO ${clean(f.iso)}`);
-  if (clean(f.f))         tech.push(`f/${clean(f.f)}`);
-
-  const techHtml = tech.length
-    ? `<div class="foto-tech">${tech.join(" · ")}</div>`
-    : "";
+  if (clean(f.camera))   tech.push(`📷 ${clean(f.camera)}`);
+  if (clean(f.objectiu)) tech.push(`🔭 ${clean(f.objectiu)}`);
+  if (clean(f.exposicio))tech.push(`⏱ ${clean(f.exposicio)}`);
+  if (clean(f.iso))      tech.push(`ISO ${clean(f.iso)}`);
+  if (clean(f.f))        tech.push(`f/${clean(f.f)}`);
 
   const descCurta  = clean(f.descripcio ?? f.descripcio_curta ?? f.descripcion_curta);
   const descLlarga = clean(f.descripcio_llarga ?? f.descripcion_llarga);
 
-  contingutDia.innerHTML = `
-    <a href="#" class="back-link" id="backFoto">← Tornar</a>
+  // ✅ Si no hi ha res (tècnica/lloc/crèdits), NO mostram el primer recuadre
+  const hasInfoCard = tech.length || lloc || credits;
 
-    <h1 class="page-title">Fotografia del mes</h1>
-    <div class="page-subtitle">${titol}</div>
-
-    ${f.imatge ? `
-      <img
-        src="${f.imatge}"
-        alt="${titol.replace(/"/g, "&quot;")}"
-        class="foto-img"
-      >
-    ` : ""}
-
-    ${autor ? `<div class="foto-autor">${autor}</div>` : ""}
-
-    <!-- Quadre 1: dades tècniques + lloc + crèdits -->
-    <div class="dia-card">
-      ${techHtml}
+  // ✅ Card 1 (info)
+  const infoCardHtml = hasInfoCard ? `
+    <div class="foto-card">
+      ${tech.length ? `<div>${tech.join(" · ")}</div>` : ""}
       ${lloc ? `<div style="margin-top:10px"><b>Lloc:</b> ${lloc}</div>` : ""}
       ${credits ? `<div style="margin-top:6px"><b>Crèdits:</b> ${credits}</div>` : ""}
     </div>
+  ` : "";
 
-    <!-- Quadre 2: descripcions -->
-    <div class="dia-card">
-      ${descCurta ? `<p class="foto-desc-curta">${descCurta}</p>` : ""}
-      ${descLlarga ? `<p class="foto-desc-llarga">${descLlarga}</p>` : ""}
-      ${(!descCurta && !descLlarga) ? `<p class="dia-muted">Sense descripció.</p>` : ""}
+  // ✅ Card 2 (descripcions)
+  const descCardHtml = (descCurta || descLlarga) ? `
+    <div class="foto-card">
+      ${descCurta ? `<div style="margin-bottom:12px">${descCurta}</div>` : ""}
+      ${descLlarga ? `<div style="opacity:.95">${descLlarga}</div>` : ""}
+    </div>
+  ` : "";
+
+  contingutDia.innerHTML = `
+    <div class="foto-wrap">
+      <a href="#" class="foto-back" id="fotoBack">← Tornar</a>
+
+      <div class="foto-title">Fotografia del mes</div>
+      ${titol ? `<div class="foto-subtitle">${titol}</div>` : ""}
+
+      ${f.imatge ? `
+        <img class="foto-img" src="${f.imatge}" alt="${titol.replace(/"/g, "&quot;")}">
+      ` : ""}
+
+      ${autor ? `<div class="foto-author">${autor}</div>` : ""}
+
+      ${infoCardHtml}
+      ${descCardHtml}
     </div>
   `;
 
-  modal.classList.remove("ocult");
-
-  // Tornar (igual que Sistema solar: history/back; aquí tanca el modal)
-  const back = document.getElementById("backFoto");
+  // ✅ Tornar com a Sistema solar (history.back)
+  const back = document.getElementById("fotoBack");
   if (back){
     back.addEventListener("click", (e) => {
       e.preventDefault();
+      // com que és un modal, aquí “tornam” tancant el modal:
       modal.classList.add("ocult");
     });
   }
+
+  modal.classList.remove("ocult");
 }
+
 
 
 function dibuixaMes(isoYM) {

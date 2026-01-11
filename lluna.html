@@ -53,6 +53,41 @@ a:active{ opacity:1; }
   justify-content:flex-start;
   gap:12px;
 }
+/* Barra de títol amb fletxes (canvi de dia) */
+.daybar{
+  display:grid;
+  grid-template-columns: 56px 1fr 56px;
+  align-items:center;
+  gap: 6px;
+  margin: 6px 0 6px;
+}
+
+.daybar h1{
+  margin: 0;              /* IMPORTANT: anul·la el margin que tens a h1 */
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: .2px;
+  text-align:center;
+}
+
+/* Fletxes “netes” (sense cercle) */
+.navArrow{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 44px;
+  line-height: 1;
+  font-weight: 800;
+  opacity: .9;
+  user-select:none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.navArrow:active{ opacity:1; }
+.navArrow.disabled{
+  opacity:.25;
+  pointer-events:none;
+}
 
 .err{
   margin-top:16px;
@@ -153,14 +188,20 @@ h1{
       <a href="#" id="back">← Tornar</a>
     </div>
 
-    <div class="center">
-      <h1>La Lluna avui</h1>
-      <div class="phaseTitle" id="title">—</div>
-      <div class="meta">
-        Data: <span id="d"></span><br>
-        <span id="age">Edat de la lluna: —</span>
-      </div>
-    </div>
+<div class="center">
+  <div class="daybar">
+    <a href="#" class="navArrow" id="prevDay" aria-label="Dia anterior">‹</a>
+    <h1>La Lluna avui</h1>
+    <a href="#" class="navArrow" id="nextDay" aria-label="Dia següent">›</a>
+  </div>
+
+  <div class="phaseTitle" id="title">—</div>
+  <div class="meta">
+    Data: <span id="d"></span><br>
+    <span id="age">Edat de la lluna: —</span>
+  </div>
+</div>
+
 
     <div class="moonbox" id="moonbox"></div>
 
@@ -191,6 +232,53 @@ h1{
     const p = new URLSearchParams(location.search);
     const dateStr = p.get("date"); // "YYYY-MM-DD"
     document.getElementById("d").textContent = dateStr || "";
+function isoFromLocalDate(d){
+  const y = d.getFullYear();
+  const m = String(d.getMonth()+1).padStart(2,"0");
+  const da = String(d.getDate()).padStart(2,"0");
+  return `${y}-${m}-${da}`;
+}
+
+function parseISODateAtMidnightLocal(iso){
+  if (!iso || !/^\d{4}-\d{2}-\d{2}$/.test(iso)) return null;
+  const [y,m,d] = iso.split("-").map(Number);
+  return new Date(y, m-1, d, 0, 0, 0, 0);
+}
+
+function buildUrlForDate(newISO){
+  const q = new URLSearchParams(location.search);
+  q.set("date", newISO);
+  return `${location.pathname}?${q.toString()}`;
+}
+
+// Base del dia: si no hi ha dateStr, agafa avui
+const baseDay = parseISODateAtMidnightLocal(dateStr) || (() => {
+  const now = new Date();
+  return new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0,0,0,0);
+})();
+
+// Enllaços prev/next
+const prev = new Date(baseDay); prev.setDate(prev.getDate() - 1);
+const next = new Date(baseDay); next.setDate(next.getDate() + 1);
+
+const prevISO = isoFromLocalDate(prev);
+const nextISO = isoFromLocalDate(next);
+
+const prevA = document.getElementById("prevDay");
+const nextA = document.getElementById("nextDay");
+
+prevA.href = buildUrlForDate(prevISO);
+nextA.href = buildUrlForDate(nextISO);
+
+// Click = navegar (recarrega la pàgina amb el nou dia)
+prevA.addEventListener("click", (e) => { e.preventDefault(); location.href = prevA.href; });
+nextA.addEventListener("click", (e) => { e.preventDefault(); location.href = nextA.href; });
+
+// Si no hi havia dateStr, actualitza el text "Data:" amb el dia real
+if (!dateStr){
+  const todayISO = isoFromLocalDate(baseDay);
+  document.getElementById("d").textContent = todayISO;
+}
 
     document.getElementById("back").addEventListener("click", (e) => {
       e.preventDefault();

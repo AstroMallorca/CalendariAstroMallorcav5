@@ -339,12 +339,16 @@
   const [y,m,d] = iso.split("-");
   return `${d}-${m}-${y}`;
 }
+function weekdayCAT(date){
+  const dies = ["Dg","Dl","Dt","Dc","Dj","Dv","Ds"];
+  return dies[date.getDay()];
+}
 
-const metaDate =
+const dmy =
   fmtDMYFromISO(dateStr) ||
   `${String(day0.getDate()).padStart(2,"0")}-${String(day0.getMonth()+1).padStart(2,"0")}-${day0.getFullYear()}`;
 
-document.getElementById("meta").textContent = metaDate;
+document.getElementById("meta").textContent = `${weekdayCAT(day0)} · ${dmy}`;
 
 
       const list = document.getElementById("list");

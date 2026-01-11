@@ -593,7 +593,7 @@ function getRiseSetSameAsEfemerides(body, observer, iso){
   const start = new Date(Y, M-1, D, 0, 0, 0);   // 00:00 local
   const t0 = Astronomy.MakeTime(start);
 
-  const alt = MOON_EVENT_ALT;  // <-- PROVA AIXÒ PRIMER
+  const alt = 0;  // <-- PROVA AIXÒ PRIMER
   // si vols la versió vella “tal qual”, posa: const alt = 0;
 
   const riseEv = Astronomy.SearchRiseSet(body, observer, +1, t0, 1, alt);

@@ -210,18 +210,23 @@ h1{
       <span class="peri">perigeu</span> / <span class="apo">apogeu</span>
     </div>
 
-    <div class="card">
-      <div class="kpi" id="kpi">
-        <div class="k">Sortida:</div><div class="v" id="kRise">—</div>
-        <div class="k">Posta:</div><div class="v" id="kSet">—</div>
-        <div class="k">Durada:</div><div class="v" id="kAbove">—</div>
-        <div class="k">Altura max:</div><div class="v" id="chartTitle">—</div>
-        <div class="k">Il·luminació:</div><div class="v" id="kIll">—</div>
-        <div class="k">Fase:</div><div class="v" id="kPhaseDeg">—</div>
-        <div class="k">Mida aparent:</div><div class="v" id="kSize">—</div>
-        <div class="k">Distància:</div><div class="v" id="kDist">—</div>
-      </div>
-    </div>
+<div class="card">
+  <div style="font-weight:800; font-size:18px; margin-bottom:10px; text-align:center;">
+    Dades de la Lluna
+  </div>
+
+  <div class="kpi" id="kpi">
+    <div class="k">Sortida:</div><div class="v" id="kRise">—</div>
+    <div class="k">Posta:</div><div class="v" id="kSet">—</div>
+    <div class="k">Durada:</div><div class="v" id="kAbove">—</div>
+    <div class="k">Altura max:</div><div class="v" id="chartTitle">—</div>
+    <div class="k">Il·luminació:</div><div class="v" id="kIll">—</div>
+    <div class="k">Fase:</div><div class="v" id="kPhaseDeg">—</div>
+    <div class="k">Mida aparent:</div><div class="v" id="kSize">—</div>
+    <div class="k">Distància:</div><div class="v" id="kDist">—</div>
+  </div>
+</div>
+
 <div class="card" id="astroCard" style="display:none;">
   <div style="font-weight:800; font-size:18px; margin-bottom:8px;">🌑 Bon dia per astrofotografia</div>
 <div style="color:var(--muted); margin-bottom:10px;">
@@ -768,6 +773,7 @@ function getRiseSetSameAsEfemerides(body, observer, iso){
         const R_MOON_KM = 1737.4;
         const angRad = 2 * Math.atan(R_MOON_KM / distKm);
         const angArcmin = (angRad * 180 / Math.PI) * 60;
+        const angDeg = angArcmin / 60;
 
         const APog = 29.4;
         const PErig = 33.5;
@@ -790,7 +796,7 @@ function getRiseSetSameAsEfemerides(body, observer, iso){
         // KPI
         document.getElementById("kIll").textContent      = fmtPct(illum*100, 2);
         document.getElementById("kPhaseDeg").textContent = `${phaseDeg.toFixed(1)}°`;
-        document.getElementById("kSize").textContent     = `${angArcmin.toFixed(1)}′`;
+        document.getElementById("kSize").textContent = `${angDeg.toFixed(2)}º`;
 
         const apsis = apsisTagForDay(day);
         const apsisTxt = apsis ? ` (${apsis.tag})` : "";

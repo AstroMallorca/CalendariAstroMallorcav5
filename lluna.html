@@ -222,6 +222,23 @@ h1{
         <div class="k">Distància:</div><div class="v" id="kDist">—</div>
       </div>
     </div>
+<div class="card" id="astroCard" style="display:none;">
+  <div style="font-weight:800; font-size:18px; margin-bottom:8px;">🌑 Bon dia per astrofotografia</div>
+  <div style="color:var(--muted); margin-bottom:10px;">
+    Dins els 3 dies abans de Lluna nova.
+  </div>
+
+  <div class="kpi">
+    <div class="k">Inici (vespre):</div><div class="v" id="astroStart">—</div>
+    <div class="k">Final (matinada):</div><div class="v" id="astroEnd">—</div>
+    <div class="k">Temps sense lluna:</div><div class="v" id="astroDur">—</div>
+  </div>
+
+  <div style="margin-top:10px; color:var(--muted); font-size:14px; line-height:1.25;">
+    Es calcula des del final del dia seleccionat (posta de sol o posta de la Lluna, el que passi més tard)
+    fins a la matinada següent (sortida de sol o sortida de la Lluna, el que passi abans).
+  </div>
+</div>
 
     <div class="err" id="err"></div>
   </div>
@@ -802,6 +819,76 @@ function getRiseSetSameAsEfemerides(body, observer, iso){
         const rs = getRiseSetSameAsEfemerides(Astronomy.Body.Moon, observer, dateStr);
 const rise = rs.rise;
 const set  = rs.set;
+        // ======= ⭐ Astrofoto (3 dies abans de Lluna nova) =======
+        const astroCard = document.getElementById("astroCard");
+
+        function nextDayISO(iso){
+          const [y,m,d] = iso.split("-").map(Number);
+          const dt = new Date(y, m-1, d, 12, 0, 0);
+          dt.setDate(dt.getDate() + 1);
+          return `${dt.getFullYear()}-${String(dt.getMonth()+1).padStart(2,"0")}-${String(dt.getDate()).padStart(2,"0")}`;
+        }
+
+        function isWithin3DaysBeforeNewMoon(dayLocalNoon){
+          // proper esdeveniment de fase 0 (Lluna nova) dins els pròxims 10 dies
+          const t0 = Astronomy.MakeTime(dayLocalNoon);
+          const nm = Astronomy.SearchMoonPhase(0, t0, +10);
+          const nmDate = nm ? nm.date : null;
+          if (!nmDate) return { ok:false, nmDate:null, diffDays:null };
+
+          // diferencia en dies (Lluna nova - dia seleccionat)
+          const day0 = new Date(dayLocalNoon); day0.setHours(0,0,0,0);
+          const nm0  = new Date(nmDate);       nm0.setHours(0,0,0,0);
+          const diffDays = Math.round((nm0.getTime() - day0.getTime()) / (24*3600*1000));
+
+          // “3 dies abans” = 1..3 dies abans (si vols incloure el mateix dia de Lluna nova, canvia a diffDays>=0)
+          const ok = (diffDays >= 0 && diffDays <= 3);
+          return { ok, nmDate, diffDays };
+        }
+
+        const check = isWithin3DaysBeforeNewMoon(day); // "day" és el teu Date al migdia local
+
+        if (astroCard && check.ok){
+          const isoToday = (dateStr && /^\d{4}-\d{2}-\d{2}$/.test(dateStr)) ? dateStr : isoFromLocalDate(day);
+          const isoTomorrow = nextDayISO(isoToday);
+
+          // Sol: posta avui i sortida demà
+          const sunToday  = getRiseSetSameAsEfemerides(Astronomy.Body.Sun, observer, isoToday);
+          const sunTom    = getRiseSetSameAsEfemerides(Astronomy.Body.Sun, observer, isoTomorrow);
+
+          const sunset = sunToday.set;    // avui
+          const sunriseNext = sunTom.rise; // demà
+
+          // Lluna: posta avui i sortida demà
+          const moonToday = getRiseSetSameAsEfemerides(Astronomy.Body.Moon, observer, isoToday);
+          const moonTom   = getRiseSetSameAsEfemerides(Astronomy.Body.Moon, observer, isoTomorrow);
+
+          const moonset = moonToday.set;       // avui
+          const moonriseNext = moonTom.rise;   // demà
+
+          // Inici = max(posta de sol, posta de la lluna)  (si falta una, usam l'altra)
+          let start = null;
+          if (sunset && moonset) start = (moonset > sunset) ? moonset : sunset;
+          else start = moonset || sunset;
+
+          // Final = min(sortida sol demà, sortida lluna demà) (si falta una, usam l'altra)
+          let end = null;
+          if (sunriseNext && moonriseNext) end = (moonriseNext < sunriseNext) ? moonriseNext : sunriseNext;
+          else end = moonriseNext || sunriseNext;
+
+          // Mostram només si tenim un tram coherent
+          if (start && end && end > start){
+            document.getElementById("astroStart").textContent = fmtTimeHM(start);
+            document.getElementById("astroEnd").textContent   = fmtTimeHM(end);
+            document.getElementById("astroDur").textContent   = fmtDurationHM(end.getTime() - start.getTime());
+            astroCard.style.display = "block";
+          }else{
+            // si no podem calcular bé, no mostram el card (per no confondre)
+            astroCard.style.display = "none";
+          }
+        }else if (astroCard){
+          astroCard.style.display = "none";
+        }
 
 
         if (rise) document.getElementById("kRise").textContent = fmtTimeHM(rise);

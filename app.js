@@ -606,6 +606,23 @@ function icsDateToISODate(dt) {
   if (!y || !m || !day) return null;
   return `${y}-${m}-${day}`;
 }
+function icsDateToHM(dt){
+  if (!dt) return "";
+  const d = dt.replace("Z", "");
+  const tPos = d.indexOf("T");
+  if (tPos === -1) return "";          // esdeveniment "tot el dia"
+  const hh = d.slice(tPos + 1, tPos + 3);
+  const mm = d.slice(tPos + 3, tPos + 5);
+  if (!hh || !mm) return "";
+  return `${hh}:${mm}`;
+}
+
+function icsTimeRange(dtstart, dtend){
+  const a = icsDateToHM(dtstart);
+  const b = icsDateToHM(dtend);
+  if (a && b) return `${a}–${b}`;
+  return a || "";
+}
 
 // === Carregues ===
 async function loadJSON(path) {
@@ -755,11 +772,18 @@ function buildActivitatsFromICS(events) {
   for (const ev of events) {
     const iso = icsDateToISODate(ev.dtstart);
     if (!iso) continue;
+
     out[iso] ??= [];
+
+    const hora = icsTimeRange(ev.dtstart, ev.dtend);
+    const comentaris = (ev.descripcio || "").trim();
+
     out[iso].push({
       titol: ev.titol,
       lloc: ev.lloc,
-      descripcio: ev.descripcio,
+      hora,                 // ✅ nou
+      comentaris,           // ✅ nou
+      descripcio: ev.descripcio, // ho deixam per compatibilitat (no ho llevis)
       url: ev.url
     });
   }
@@ -1085,14 +1109,25 @@ const histItems = renderHistoricItems(rawHist);
   const teEspecials = espOrdenades && espOrdenades.length;
   const teHistoric  = histItems && histItems.length;
 
-  const activitatHtml = teActivitat
-    ? `<div class="dia-card">
-         <div class="dia-card-title">Activitat</div>
-         <ul class="dia-list">
-           ${act.map(a => `<li><b>${a.titol}</b>${a.lloc ? ` — ${a.lloc}` : ""}${a.url ? ` — <a href="${a.url}" target="_blank">Enllaç</a>` : ""}</li>`).join("")}
-         </ul>
-       </div>`
-    : "";
+const activitatHtml = teActivitat
+  ? `<div class="dia-card">
+       <div class="dia-card-title">Activitat</div>
+       <ul class="dia-list">
+         ${act.map(a => {
+           const notes = (a.comentaris || "").trim().replace(/\n+/g, "<br>");
+           return `
+             <li>
+               <b>${a.titol || ""}</b>
+               ${a.hora ? ` — <span class="dia-time">${a.hora}</span>` : ""}
+               ${a.lloc ? ` — ${a.lloc}` : ""}
+               ${notes ? `<div class="dia-note">${notes}</div>` : ""}
+               ${a.url ? ` <div><a href="${a.url}" target="_blank" rel="noopener">Enllaç</a></div>` : ""}
+             </li>
+           `;
+         }).join("")}
+       </ul>
+     </div>`
+  : "";
 
 const especialsHtml = teEspecials
   ? `<div class="dia-card">

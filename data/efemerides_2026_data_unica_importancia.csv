@@ -40,8 +40,7 @@ data;tipus;titol;codi;Hora;importancia
 15-02-2026;lluna;La Lluna 0,7° al sud de Metis (ocultació);;;5
 16-02-2026;lluna;La Lluna 0,7° al sud de Mart (ocultació);;;5
 16-02-2026;planeta;Saturn 0,9° al sud de Neptú;;;6
-17-02-2026;eclipsi;Eclipsi anular de Sol, visibilitat màxima a l’Antàrtida, amb passos pel sud de l’Amèrica del Sud i pel Pacífic.
-, ;assets/icons/special/eclipsi.png;9
+17-02-2026;eclipsi;Eclipsi anular de Sol, visibilitat màxima a l’Antàrtida, amb passos pel sud de l’Amèrica del Sud i pel Pacífic;assets/icons/special/eclipsi.png;;9
 17-02-2026;lluna;Lluna nova;;;5
 18-02-2026;lluna;La Lluna 0,1° al sud de Mercuri (ocultació);;;5
 18-02-2026;lluna;La Lluna 2° al nord de Venus;;;5
@@ -61,7 +60,7 @@ data;tipus;titol;codi;Hora;importancia
 02-03-2026;lluna;La Lluna 0,3° al nord de Règul (ocultació);;;5
 02-03-2026;asteroide;Pal·les en conjunció amb el Sol;;;8
 03-03-2026;lluna;Lluna plena;;;5
-03-03-2026;eclipsi;Eclipsi total de Lluna, Oceà Pacífic i regions adjacents;assets/icons/special/eclipsi.png;9
+03-03-2026;eclipsi;Eclipsi total de Lluna, Oceà Pacífic i regions adjacents;assets/icons/special/eclipsi.png;;9
 07-03-2026;planeta;Mercuri en conjunció inferior amb el Sol;;;6
 08-03-2026;planeta;Venus 1,0° al nord de Saturn;;;6
 10-03-2026;lluna;La Lluna 0,5° al sud d’Antares (ocultació);;;5
@@ -256,7 +255,7 @@ data;tipus;titol;codi;Hora;importancia
 28-08-2026;asteroide;Astrea en oposició;;;8
 28-08-2026;lluna;La Lluna 3° al nord d’Astrea;;;5
 28-08-2026;lluna;Lluna plena;;;5
-28-08-2026;eclipsi;Eclipsi parcial de Lluna (visible a Espanya);assets/icons/special/eclipsi.png;9
+28-08-2026;eclipsi;Eclipsi parcial de Lluna (visible a Espanya);assets/icons/special/eclipsi.png;;9
 31-08-2026;lluna;La Lluna 7° al nord de Saturn;;;5
 03-09-2026;lluna;La Lluna 1,0° al nord d’Alcióne (ocultació);;;5
 03-09-2026;lluna;La Lluna 5° al nord d’Urà;;;5
@@ -398,6 +397,7 @@ data;tipus;titol;codi;Hora;importancia
 28-12-2026;lluna;La Lluna 5° al sud de Mart;;;5
 29-12-2026;lluna;La Lluna 1,1° al nord d’Higiea (ocultació);;;5
 30-12-2026;lluna;Quart minvant;;;5
+
 
 
 

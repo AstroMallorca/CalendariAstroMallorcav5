@@ -893,8 +893,8 @@ const rise = rs.rise;
 const set  = rs.set;
 
 // Mostra també la data si cau a l’endemà
-if (rise) document.getElementById("kRise").textContent = fmtTimeHMWithDay(rise, day0);
-if (set)  document.getElementById("kSet").textContent  = fmtTimeHMWithDay(set,  day0);
+document.getElementById("kRise").textContent = rise ? fmtTimeHMWithDay(rise, day0) : "—";
+document.getElementById("kSet").textContent  = set  ? fmtTimeHMWithDay(set,  day0) : "—";
 
 // Durada (encara que la posta sigui demà)
 if (rise && set){

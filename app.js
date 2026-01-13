@@ -155,6 +155,18 @@ function getMesInicial2026() {
 
 // === CONTROL DE MES (SWIPE) ===
 let mesActual = getMesInicial2026();
+// === Deep-link: si venim d'una pàgina (Lluna/Sol/Planetes) amb ?date=YYYY-MM-DD,
+// volem obrir directament el modal d'EFEMÈRIDES d'aquell dia.
+let DEEPLINK_ISO = null;
+try{
+  const p = new URLSearchParams(location.search);
+  const q = (p.get("date") || "").trim();
+  if (/^\d{4}-\d{2}-\d{2}$/.test(q)) {
+    DEEPLINK_ISO = q;
+    // Ens asseguram que el calendari pinta el mes correcte
+    mesActual = DEEPLINK_ISO.slice(0, 7); // "YYYY-MM"
+  }
+}catch(e){}
 
 function monthToParts(isoYM){
   const [y, m] = isoYM.split("-").map(Number);
@@ -1451,6 +1463,10 @@ fotosMes = buildFotosMes(fotos);
 
     // ✅ mes inicial ja calculat (mesActual) i avui groc ja aplicat a dibuixaMes
     renderMes(mesActual);
+    // ✅ Si hi ha deep-link, obrim el modal del dia
+if (DEEPLINK_ISO) {
+  await obreDia(DEEPLINK_ISO);
+}
 
     // ✅ refresc suau (sense trencar festius)
     if (navigator.onLine) {

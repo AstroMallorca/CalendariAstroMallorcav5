@@ -130,6 +130,7 @@ h1{
 
   <div id="infoCard" class="info-card" style="display:none;">
     <div id="techLine" class="tech-line"></div>
+    <div id="dataLine" class="lloc-line"></div>
     <div id="llocLine" class="lloc-line"></div>
     <div id="creditsLine" class="credits-line"></div>
   </div>
@@ -248,8 +249,10 @@ const exposicio= clean(f?.exposicio);
 const isoVal   = clean(f?.iso);
 const fVal     = clean(f?.f);
 
+const dataFeta = clean(f?.data_feta);
 const lloc  = clean(f?.lloc);
 const credits = clean(f?.credits ?? f?.credit);
+
 
 const tech = [];
 if (camera)   tech.push(`📷 ${camera}`);
@@ -258,10 +261,11 @@ if (exposicio)tech.push(`⏱ ${exposicio}`);
 if (isoVal)   tech.push(`ISO ${isoVal}`);
 if (fVal)     tech.push(`f/${fVal}`);
 
-const hasInfoCard = tech.length || lloc || credits;
+const hasInfoCard = tech.length || dataFeta || lloc || credits;
 
 const infoCard = document.getElementById("infoCard");
 const techLine = document.getElementById("techLine");
+const dataLine = document.getElementById("dataLine");
 const llocLine = document.getElementById("llocLine");
 const creditsLine = document.getElementById("creditsLine");
 
@@ -272,6 +276,17 @@ if (infoCard){
       techLine.innerHTML = tech.length ? tech.join(" · ") : "";
       techLine.style.display = tech.length ? "block" : "none";
     }
+    // data
+if (dataLine){
+  dataLine.innerHTML = dataFeta ? `<b>Data:</b> ${dataFeta}` : "";
+  dataLine.style.display = dataFeta ? "block" : "none";
+}
+
+// lloc
+if (llocLine){
+  llocLine.innerHTML = lloc ? `<b>Lloc:</b> ${lloc}` : "";
+  llocLine.style.display = lloc ? "block" : "none";
+}
 
     // lloc
     if (llocLine){
